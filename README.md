@@ -15,11 +15,19 @@ Game client
 -  [ ] use [webpack](https://webpack.js.org/)
 
 ## Todo list
-UI Component
--  [ ] card component
--  [ ] deck component
--  [ ] table component
+-  [ ]  add storybook
+-  [ ]  svg card icon
+-  [ ]  what font to use
+- [ ]  UI Component
+  -  [ ] card component
+  -  [ ] deck component
+  -  [ ] table component
+  -  [ ]  shuffle animation
 
 Game Logic
 -  [ ] game protocol
 
+
+## Inspiration link
+- [design](https://www.behance.net/gallery/19253089/Flat-design-Playing-Cards)
+- [design 2](https://dribbble.com/shots/2146249-Playing-Cards-Material-Design/attachments/393159)
