@@ -32,8 +32,8 @@ Game Logic
 - [design](https://www.behance.net/gallery/19253089/Flat-design-Playing-Cards)
 - [design 2](https://dribbble.com/shots/2146249-Playing-Cards-Material-Design/attachments/393159)
 
-- [design 3 - ingame ui] https://codepen.io/devildrey33/pen/xELXRa
-- [design 4 - card and board ui] https://lh3.ggpht.com/GNftqAU9b07Xo26fc2LES3UX9A2yoQm9JAngtOM8vy-bkJvGw7Lmy7SLQ2hwyUZsgQxx=h310
+- [design 3 - ingame ui](https://codepen.io/devildrey33/pen/xELXRa)
+- [design 4 - card and board ui](https://lh3.ggpht.com/GNftqAU9b07Xo26fc2LES3UX9A2yoQm9JAngtOM8vy-bkJvGw7Lmy7SLQ2hwyUZsgQxx=h310)
 
 ## Storybook
 We use [Storybook](https://storybook.js.org/basics/introduction/) as a tool for documenting our components.

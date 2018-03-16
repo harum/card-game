@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import './abc.scss';
 
+import Button from './components/Button/Button';
+
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
     return (
@@ -14,6 +17,11 @@ class App extends Component {
         <p className="App-intro u-fg--red">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <Button
+          content="Pencet Aku"
+          variant="c-btn--red"
+        />
       </div>
     );
   }

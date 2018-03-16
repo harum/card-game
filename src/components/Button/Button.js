@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
-export default class Button extends Component {
+const propTypes = {
+  variant: PropTypes.string,
+  content: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  variant: ''
+};
+
+// eslint-disable-next-line react/prefer-stateless-function
+class Button extends Component {
   render() {
     const {
       variant,
-      content,
+      content
     } = this.props;
 
     const btnClass = `c-btn ${variant}`;
@@ -20,3 +31,8 @@ export default class Button extends Component {
     );
   }
 }
+
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
+
+export default Button;
