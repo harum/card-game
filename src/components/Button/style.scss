@@ -1,0 +1,82 @@
+.c-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 7px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  overflow: visible;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  background-color: #fafafa;
+  color: #333;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: auto;
+  height: auto;
+  letter-spacing: 0;
+}
+
+.c-btn--red {
+  background-color: #d71149;
+  border-color: #d71149;
+}
+
+.c-btn--red,
+.c-btn--red:hover,
+.c-btn--red:focus,
+.c-btn--red:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.c-btn--red:hover,
+.c-btn--red:focus {
+  background-color: #c30f42;
+  border-color: #c30f42;
+}
+
+.c-btn--red:active,
+.c-btn--red.is-active {
+  background-color: #ad123b;
+  border-color: #ad123b;
+  color: #fff;
+}
+
+.c-btn--red[disabled],
+.c-btn--red[disabled]:hover,
+.c-btn--red[disabled]:focus,
+.c-btn--red[disabled]:active,
+.c-btn--red.c-btn[disabled],
+.c-btn--red.c-btn[disabled]:hover,
+.c-btn--red.c-btn[disabled]:focus,
+.c-btn--red.c-btn[disabled]:active,
+.c-btn--red.c-btn--disabled,
+.c-btn--red.c-btn--disabled:hover,
+.c-btn--red.c-btn--disabled:focus,
+.c-btn--red.c-btn--disabled:active {
+  color: #fff;
+}
+
+.c-btn--tiny {
+  font-size: 12px;
+  padding: 1px 12px;
+}
+
+.c-btn--small {
+  font-size: 12px;
+  padding: 4px 12px;
+}
+
+.c-btn--large {
+  font-size: 16px;
+  padding: 10px 30px;
+}
