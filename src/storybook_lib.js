@@ -14,7 +14,7 @@ const StoryBook = {
   number,
   boolean,
   array,
-  select,
+  select
 };
 
 export default StoryBook;
