@@ -1,6 +1,6 @@
 // Import Library
-import Lib from '../../storybook_lib';
 import React from 'react';
+import Lib from '../../storybook_lib';
 
 // Import Element(s)
 import Card from './Card';
@@ -9,4 +9,4 @@ import Card from './Card';
 const story = Lib.storiesOf('Card', module);
 
 // Default
-story.add('Default', () => (<Card/>));
+story.add('Default', () => (<Card />));

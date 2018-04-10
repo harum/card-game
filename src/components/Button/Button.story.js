@@ -1,6 +1,6 @@
 // Import Library
-import Lib from '../../storybook_lib';
 import React from 'react';
+import Lib from '../../storybook_lib';
 
 // Import Element(s)
 import Button from './Button';
@@ -14,7 +14,7 @@ const sizeOptions = {
   'c-btn--tiny': 'tiny',
   'c-btn--small': 'small',
   'c-btn': 'default',
-  'c-btn--large': 'large',
+  'c-btn--large': 'large'
 };
 
 // Default

@@ -1,6 +1,39 @@
 .c-card {
+  box-sizing: border-box; /* need to be a global style later */
+
+  position: relative;
   height: 190px;
   width: 140px;
   border-radius: 5px;
-  background: blue;
+  background: #ffffff;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.75);
+  display: inline-block;
+  margin-right: 4px;
+  padding: 6px;
+
+  &--image {
+    position: absolute;
+    width: 70px;
+    left: 35px;
+    top: 56px;
+  }
+
+  &--corner {
+    position: absolute;
+    font-size: 20px;
+
+    img {
+      display: inline;
+      width: 16px;
+      margin-top: 3px;
+      position: absolute;
+      margin-left: 4px;
+    }
+
+    &-right {
+      bottom: 6px;
+      right: 6px;
+      margin-right: 19px;
+    }
+  }
 }

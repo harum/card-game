@@ -4,6 +4,7 @@ import './App.css';
 import './abc.scss';
 
 import Button from './components/Button/Button';
+import Card from './components/Card/Card';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
@@ -22,6 +23,14 @@ class App extends Component {
           content="Pencet Aku"
           variant="c-btn--red"
         />
+
+        <div>
+          <Card number="2" type="spade" />
+          <Card number="4" type="heart" />
+          <Card number="6" type="club" />
+          <Card number="8" type="diamond" />
+        </div>
+
       </div>
     );
   }
