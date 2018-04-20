@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 120.3 166.4" style="enable-background:new 0 0 120.3 166.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBB832;}
+	.st1{fill:#F27E30;}
+	.st2{fill:#F19033;}
+	.st3{fill:#E2522F;}
+	.st4{fill:#F18F90;}
+	.st5{fill:#EE5756;}
+	.st6{fill:#E53536;}
+	.st7{fill:#A52128;}
+	.st8{fill:#FFFFFF;}
+</style>
+<g>
+	<polygon class="st0" points="26,15.6 29.3,23.7 32.3,31 45.6,31 45.6,23.7 45.6,10.2 60.1,0 60.1,73.2 16.1,73.2 0,11.2 	"/>
+	<polygon class="st1" points="29.3,23.7 45.6,23.7 45.6,31 32.3,31 	"/>
+	<polygon class="st2" points="94.3,15.6 91,23.7 88,31 74.7,31 74.7,23.7 74.7,10.2 60.1,0 60.1,73.2 104.2,73.2 120.3,11.2 	"/>
+	<polygon class="st3" points="91,23.7 74.7,23.7 74.7,31 88,31 	"/>
+	<g id="XMLID_2_">
+		<path id="XMLID_16_" class="st4" d="M60.1,34.9c-8.4,0-15.2,6.8-15.2,15.2h15.2V34.9z"/>
+		<path id="XMLID_15_" class="st5" d="M60.1,65.3c-8.4,0-15.2-6.8-15.2-15.2h15.2V65.3z"/>
+		<path id="XMLID_14_" class="st6" d="M60.1,34.9c8.4-0.1,15.3,6.7,15.3,15.1l-15.2,0.1L60.1,34.9z"/>
+		<path id="XMLID_13_" class="st7" d="M60.1,65.3c8.4,0,15.2-6.8,15.2-15.2H60.1V65.3z"/>
+		<circle id="XMLID_12_" class="st8" cx="60.1" cy="50.2" r="5.2"/>
+	</g>
+</g>
+<g>
+	<polygon class="st0" points="94.3,150.8 91,142.7 88,135.4 74.7,135.4 74.7,142.7 74.7,156.2 60.1,166.4 60.1,93.2 104.2,93.2 
+		120.3,155.2 	"/>
+	<polygon class="st1" points="91,142.7 74.7,142.7 74.7,135.4 88,135.4 	"/>
+	<polygon class="st2" points="26,150.8 29.3,142.7 32.3,135.4 45.6,135.4 45.6,142.7 45.6,156.2 60.1,166.4 60.1,93.2 16.1,93.2 
+		0,155.2 	"/>
+	<polygon class="st3" points="29.3,142.7 45.6,142.7 45.6,135.4 32.3,135.4 	"/>
+	<g id="XMLID_1_">
+		<path id="XMLID_7_" class="st4" d="M60.2,131.5c8.4,0,15.2-6.8,15.2-15.2H60.2V131.5z"/>
+		<path id="XMLID_6_" class="st5" d="M60.2,101.1c8.4,0,15.2,6.8,15.2,15.2H60.2V101.1z"/>
+		<path id="XMLID_5_" class="st6" d="M60.2,131.4c-8.4,0.1-15.3-6.7-15.3-15.1l15.2-0.1L60.2,131.4z"/>
+		<path id="XMLID_4_" class="st7" d="M60.1,101.1c-8.4,0-15.2,6.8-15.2,15.2h15.2V101.1z"/>
+		<circle id="XMLID_3_" class="st8" cx="60.1" cy="116.2" r="5.2"/>
+	</g>
+</g>
+<g id="XMLID_8_">
+	<circle id="XMLID_61_" class="st7" cx="46.8" cy="83.2" r="5.8"/>
+	<circle id="XMLID_60_" class="st7" cx="73.3" cy="83" r="5.8"/>
+</g>
+</svg>
