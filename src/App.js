@@ -29,6 +29,10 @@ class App extends Component {
           <Card number="4" type="heart" />
           <Card number="6" type="club" />
           <Card number="8" type="diamond" />
+          <Card number="J" type="diamond" />
+          <Card number="Q" type="diamond" />
+          <Card number="K" type="diamond" />
+          <Card number="A" type="diamond" />
         </div>
 
       </div>
