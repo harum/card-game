@@ -12,8 +12,8 @@ const images = {
   J: jack,
   Q: queen,
   K: king,
-  club,
   diamond,
+  club,
   heart,
   spade
 };

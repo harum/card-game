@@ -1,39 +1,36 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
-.c-card {
-  font-family: 'Quicksand', sans-serif;
-  position: relative;
-  height: 190px;
-  width: 140px;
-  border-radius: 5px;
-  background: #ffffff;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.75);
-  display: inline-block;
-  padding: 6px;
+// base on poker card standard size
+$card-base-height: 89px;
+$card-base-width: 64px;
 
-  &--image {
-    position: absolute;
-    width: 70px;
-    left: 35px;
-    top: 56px;
+.c-card {
+  align-items: center;
+  background: $color-white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 1px $color-grey;
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  height: $card-base-height * 2;
+  justify-content: space-between;
+  padding: .5em;
+  width: $card-base-width * 2;
+
+  &--red {
+    color: $color-red;
   }
 
-  &--corner {
-    position: absolute;
-    font-size: 20px;
+  &__image {
+    width: 60px;
+  }
 
-    img {
-      display: inline;
-      width: 16px;
-      margin-top: 3px;
-      position: absolute;
-      margin-left: 4px;
-    }
+  &__top {
+    align-self: flex-start;
+  }
 
-    &-right {
-      bottom: 6px;
-      right: 6px;
-      margin-right: 19px;
-    }
+  &__bottom {
+    align-self: flex-end;
   }
 }

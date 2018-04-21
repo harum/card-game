@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from './components/Button/Button';
-import Card from './components/Card/Card';
+import Card from './components/Card';
 import CardNumber from './components/CardNumber';
 
 // eslint-disable-next-line react/prefer-stateless-function

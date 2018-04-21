@@ -3,7 +3,7 @@ import React from 'react';
 import Lib from '../../storybook_lib';
 
 // Import Element(s)
-import Card from './Card';
+import Card from './index';
 
 // Story Config
 const story = Lib.storiesOf('Card', module);
