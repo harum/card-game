@@ -1,8 +1,82 @@
 import React, { Component } from 'react';
 
 import Button from './components/Button/Button';
-import Card from './components/Card';
-import CardNumber from './components/CardNumber';
+import HandCards from './components/HandCards';
+
+const cards = [
+  {
+    type: 'spade',
+    number: '1',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'heart',
+    number: '2',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'club',
+    number: '3',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'diamond',
+    number: '4',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'heart',
+    number: '5',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'spade',
+    number: '6',
+    eligible: true,
+    picked: true
+  },
+  {
+    type: 'heart',
+    number: '7',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'club',
+    number: '8',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'diamond',
+    number: '9',
+    eligible: true,
+    picked: false
+  },
+  {
+    type: 'heart',
+    number: 'J',
+    eligible: false,
+    picked: false
+  },
+  {
+    type: 'club',
+    number: 'Q',
+    eligible: true,
+    picked: false
+  },
+  {
+    type: 'diamond',
+    number: 'K',
+    eligible: false,
+    picked: false
+  }
+];
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
@@ -15,20 +89,8 @@ class App extends Component {
         />
 
         <div>
-          <CardNumber number="2" type="spade" />
-          <CardNumber number="2" type="spade" reverse />
+          <HandCards cards={cards} />
         </div>
-        <div>
-          <Card number="2" type="spade" />
-          <Card number="4" type="heart" />
-          <Card number="6" type="club" />
-          <Card number="8" type="diamond" />
-          <Card number="J" type="diamond" />
-          <Card number="Q" type="diamond" />
-          <Card number="K" type="diamond" />
-          <Card number="A" type="diamond" />
-        </div>
-
       </div>
     );
   }

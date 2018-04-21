@@ -1,0 +1,13 @@
+$card-base-height: 89px;
+$picked-card-space: 30px;
+
+.c-hand-cards {
+  height: ($card-base-height * 2) + $picked-card-space;
+  position: relative;
+
+  &__item {
+    bottom: 0;
+    display: inline-block;
+    position: absolute;
+  }
+}
