@@ -1,0 +1,16 @@
+@import '../../assets/stylesheets/mixins/settings.global';
+
+.c-card-number {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 1em;
+}
+
+.c-card-number--reverse {
+  transform: rotate(180deg);
+}
+
+.c-card-number__image {
+  height: 1em;
+}

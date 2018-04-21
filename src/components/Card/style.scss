@@ -1,6 +1,7 @@
-.c-card {
-  box-sizing: border-box; /* need to be a global style later */
+@import '../../assets/stylesheets/mixins/settings.global';
 
+.c-card {
+  font-family: 'Quicksand', sans-serif;
   position: relative;
   height: 190px;
   width: 140px;
@@ -8,7 +9,6 @@
   background: #ffffff;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.75);
   display: inline-block;
-  margin-right: 4px;
   padding: 6px;
 
   &--image {
