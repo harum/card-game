@@ -1,3 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+// import io from 'socket.io-client';
+/* eslint-enable import/no-extraneous-dependencies */
+
 import React, { Component } from 'react';
 
 import Button from './components/Button/Button';
@@ -80,6 +84,19 @@ const cards = [
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards
+    };
+  }
+
+  handleUpdatePickedCard = (index) => {
+    const tempCards = this.state.cards;
+    tempCards[index].picked = !tempCards[index].picked;
+    this.setState({ cards: tempCards });
+  }
+
   render() {
     return (
       <div>
@@ -89,7 +106,7 @@ class App extends Component {
         />
 
         <div>
-          <HandCards cards={cards} />
+          <HandCards cards={cards} updatePickedCard={index => this.handleUpdatePickedCard(index)} />
         </div>
       </div>
     );

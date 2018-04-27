@@ -36,6 +36,7 @@ $card-base-width: 64px;
 
   &:hover {
     box-shadow: 0 0 20px 5px $color-grey;
+    cursor: pointer;
   }
 
   &:active {
