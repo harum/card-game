@@ -11,8 +11,8 @@ const getCardStyle = (card, index) =>
     bottom: `${(card.picked ? CARD_SPACE : 0)}px`
   });
 
-const HandCards = ({ cards, updatePickedCard }) => {
-  const handlePickHandCard = index => updatePickedCard(index);
+const HandCards = ({ cards, onHandCardClicked }) => {
+  const pickCard = index => onHandCardClicked(index);
 
   return (
     <div className="c-hand-cards">
@@ -26,7 +26,7 @@ const HandCards = ({ cards, updatePickedCard }) => {
             <Card
               type={card.type}
               number={card.number}
-              pickHandCard={() => handlePickHandCard(index)}
+              onCardClicked={() => pickCard(index)}
             />
           </div>
         ))
@@ -37,7 +37,7 @@ const HandCards = ({ cards, updatePickedCard }) => {
 
 HandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
-  updatePickedCard: PropTypes.func.isRequired
+  onHandCardClicked: PropTypes.func.isRequired
 };
 
 HandCards.defaultProps = {

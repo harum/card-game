@@ -91,7 +91,7 @@ class App extends Component {
     };
   }
 
-  handleUpdatePickedCard = (index) => {
+  pickHandCard = (index) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
     this.setState({ cards: tempCards });
@@ -106,7 +106,10 @@ class App extends Component {
         />
 
         <div>
-          <HandCards cards={cards} updatePickedCard={index => this.handleUpdatePickedCard(index)} />
+          <HandCards
+            cards={cards}
+            onHandCardClicked={index => this.pickHandCard(index)}
+          />
         </div>
       </div>
     );
