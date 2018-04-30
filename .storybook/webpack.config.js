@@ -1,18 +1,18 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = (storybookBaseConfig, configType) => {
-  // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
-  // You can change the configuration based on that.
-  // 'PRODUCTION' is used when building the static version of storybook.
+const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
-  // Make whatever fine-grained changes you need
-  storybookBaseConfig.resolve.extensions.push('.js');
-  storybookBaseConfig.resolve.extensions.push('.css');
-  storybookBaseConfig.resolve.extensions.push('.scss');
-  storybookBaseConfig.resolve.extensions.push('.sass');
+module.exports = (baseConfig, env) => {
+  const defaultConfig = genDefaultConfig(baseConfig, env);
 
-  storybookBaseConfig.module.rules.push({
+  // Extend defaultConfig as you need.
+  defaultConfig.resolve.extensions.push('.js');
+  defaultConfig.resolve.extensions.push('.css');
+  defaultConfig.resolve.extensions.push('.scss');
+  defaultConfig.resolve.extensions.push('.sass');
+
+  defaultConfig.module.rules.push({
     test: /\.(sass|scss)$/,
     // loader: ['sass-loader'],
     use: ExtractTextPlugin.extract({
@@ -23,10 +23,9 @@ module.exports = (storybookBaseConfig, configType) => {
     include: path.resolve(__dirname, '../')
   });
 
-  storybookBaseConfig.plugins.push(
+  defaultConfig.plugins.push(
     new ExtractTextPlugin('style.css')
   );
 
-  // Return the altered config
-  return storybookBaseConfig;
+  return defaultConfig;
 };
