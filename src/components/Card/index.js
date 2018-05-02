@@ -6,13 +6,13 @@ import cardColor from '../../helpers/cardColor';
 import CardNumber from '../CardNumber';
 import './style.scss';
 
-const Card = ({ type, number, onCardClicked }) => {
+const Card = ({ type, number, onClick }) => {
   const containerClass = classNames(
     'c-card',
     `c-card--${cardColor.getColor(type)}`
   );
 
-  const pickCard = () => onCardClicked();
+  const pickCard = () => onClick();
 
   return (
     <div>
@@ -36,7 +36,11 @@ const Card = ({ type, number, onCardClicked }) => {
 Card.propTypes = {
   type: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  onCardClicked: PropTypes.func.isRequired
+  onClick: PropTypes.func
+};
+
+Card.defaultProps = {
+  onClick: () => {}
 };
 
 export default Card;

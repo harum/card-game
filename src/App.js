@@ -82,7 +82,6 @@ const cards = [
   }
 ];
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   constructor(props) {
     super(props);
@@ -91,7 +90,7 @@ class App extends Component {
     };
   }
 
-  pickHandCard = (index) => {
+  pickCard = (index) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
     this.setState({ cards: tempCards });
@@ -108,7 +107,7 @@ class App extends Component {
         <div>
           <HandCards
             cards={cards}
-            onHandCardClicked={index => this.pickHandCard(index)}
+            onCardClicked={index => this.pickCard(index)}
           />
         </div>
       </div>
