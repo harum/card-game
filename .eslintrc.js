@@ -46,6 +46,7 @@ module.exports = {
     "no-unused-expressions": "warn",
     "no-useless-concat": "warn",
     "block-scoped-var": "error",
-    "consistent-return": "error"
+    "consistent-return": "error",
+    "react/forbid-prop-types": 0
   }
 };

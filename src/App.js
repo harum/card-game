@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 
-import Button from './components/Button/Button';
+import Table from './components/Table';
 import HandCards from './components/HandCards';
 
 const cards = [
@@ -99,17 +99,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Button
-          content="Pencet Aku"
-          variant="c-btn--red"
-        />
-
-        <div>
+        <Table>
           <HandCards
             cards={cards}
             onCardClicked={index => this.pickCard(index)}
           />
-        </div>
+        </Table>
       </div>
     );
   }
