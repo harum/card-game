@@ -1,0 +1,17 @@
+@import '../../assets/stylesheets/mixins/settings.global';
+
+.c-card {
+  background: $color-white;
+  border-radius: 2px;
+  box-shadow: -1px 1px 1px 1px $color-grey;
+  height: $card-base-height * 2;
+  width: $card-base-width * 2;
+
+  &:hover {
+    box-shadow: 0 0 20px 5px $color-grey;
+  }
+
+  &:active {
+    box-shadow: 0 0 20px 1px $color-grey;
+  }
+}

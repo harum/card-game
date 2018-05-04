@@ -1,9 +1,5 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
-// base on poker card standard size
-$card-base-height: 89px;
-$card-base-width: 64px;
-
 .c-card {
   align-items: center;
   background: $color-white;
@@ -13,17 +9,17 @@ $card-base-width: 64px;
   display: flex;
   flex-direction: column;
   font-family: 'Quicksand', sans-serif;
-  height: $card-base-height * 2;
+  height: $card-base-height * 1.5;
   justify-content: space-between;
   padding: .5em;
-  width: $card-base-width * 2;
+  width: $card-base-width * 1.5;
 
   &--red {
     color: $color-red;
   }
 
   &__image {
-    width: 60px;
+    width: 35px;
   }
 
   &__top {
@@ -35,11 +31,11 @@ $card-base-width: 64px;
   }
 
   &:hover {
-    box-shadow: 0 0 20px 5px $color-grey;
+    box-shadow: 0 0 20px 5px $color-black;
     cursor: pointer;
   }
 
   &:active {
-    box-shadow: 0 0 20px 1px $color-grey;
+    box-shadow: 0 0 20px 1px $color-black;
   }
 }
