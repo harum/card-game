@@ -11,29 +11,26 @@ const getCardStyle = (card, index) =>
     bottom: `${(card.picked ? CARD_SPACE : 0)}px`
   });
 
-const HandCards = ({ cards, onCardClicked }) => {
-  const pickCard = index => onCardClicked(index);
-
-  return (
-    <div className="c-hand-cards">
-      { cards.map((card, index) =>
-        (
-          <div
-            style={getCardStyle(card, index)}
-            className="c-hand-cards__item"
-            key={`${card.type}-${card.number}`}
-          >
-            <Card
-              type={card.type}
-              number={card.number}
-              onClick={() => pickCard(index)}
-            />
-          </div>
-        ))
-      }
-    </div>
-  );
-};
+const HandCards = ({ cards, onCardClicked }) => (
+  <div className="c-hand-cards">
+    { cards.map((card, index) =>
+      (
+        <div
+          style={getCardStyle(card, index)}
+          className="c-hand-cards__item"
+          role="presentation"
+          key={`${card.type}-${card.number}`}
+          onClick={() => onCardClicked(index)}
+        >
+          <Card
+            type={card.type}
+            number={card.number}
+          />
+        </div>
+      ))
+    }
+  </div>
+);
 
 HandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
