@@ -102,7 +102,7 @@ class App extends Component {
         <Table>
           <HandCards
             cards={cards}
-            onCardClicked={index => this.pickCard(index)}
+            onCardClick={index => this.pickCard(index)}
           />
         </Table>
       </div>
