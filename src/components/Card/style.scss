@@ -29,13 +29,4 @@
   &__bottom {
     align-self: flex-end;
   }
-
-  &:hover {
-    box-shadow: 0 0 20px 5px $color-black;
-    cursor: pointer;
-  }
-
-  &:active {
-    box-shadow: 0 0 20px 1px $color-black;
-  }
 }

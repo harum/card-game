@@ -1,4 +1,5 @@
-$card-base-height: 89px;
+@import '../../assets/stylesheets/mixins/settings.global';
+
 $picked-card-space: 30px;
 
 .c-hand-cards {
@@ -9,5 +10,14 @@ $picked-card-space: 30px;
     bottom: 0;
     display: inline-block;
     position: absolute;
+
+    &:hover {
+      box-shadow: 0 0 20px 5px $color-black;
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: 0 0 20px 1px $color-black;
+    }
   }
 }
