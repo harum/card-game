@@ -35,15 +35,11 @@ const typeOptions = {
 story.add('Default Card', () => {
   const num = Lib.select('number', numOptions, 'A');
   const type = Lib.select('type', typeOptions, 'spade');
-  const cardClicked = () => {
-    console.log('card-clicked'); // eslint-disable-line no-console
-  };
 
   return (
     <Card
       type={type}
       number={num}
-      onClick={() => cardClicked()}
     />
   );
 });
