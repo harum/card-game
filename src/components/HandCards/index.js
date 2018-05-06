@@ -7,7 +7,7 @@ const CARD_SPACE = 30;
 
 const getCardStyle = (card, index) =>
   ({
-    left: `${(index * CARD_SPACE)}px`,
+    zIndex: `${index}`,
     bottom: `${(card.picked ? CARD_SPACE : 0)}px`
   });
 

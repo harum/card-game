@@ -1,67 +1,41 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
-// should be global settings
-$card-base-height: 89px;
-$picked-card-space: 30px;
-
 .c-table {
   background: $color-green;
 
   width: 100%;
   height: 100vh;
 
-  &__left {
-    position: relative;
-    display: inline-block;
-    width: 25%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 23% auto 23%;
 
-    &__card-holder {
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card_placeholder {
+    height: $card-base-height * 1.5;
+
+    &--top {
+      align-self: flex-start;
+      transform: rotate(180deg);
+    }
+
+    &--left {
       transform: rotate(90deg);
-      position: absolute;
-      left: $card-base-height + ($picked-card-space / 2);
-      top: 12%;
-    }
-  }
-
-  &__middle {
-    position: relative;
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-
-    &__top {
-      height: 50%;
-
-      &__card-holder {
-        transform: rotate(180deg);
-        position: absolute;
-        right: 28%;
-      }
+      margin-left: -($card-base-height + $picked-card-space);
     }
 
-    &__bottom {
-      height: 50%;
-
-      &__card-holder {
-        position: absolute;
-        left: 18%;
-        bottom: 0;
-      }
-    }
-  }
-
-  &__right {
-    position: relative;
-    display: inline-block;
-    width: 25%;
-    height: 100%;
-
-    &__card-holder {
+    &--right {
       transform: rotate(270deg);
-      position: absolute;
-      right: $card-base-height + ($picked-card-space / 2);
-      bottom: 12%;
+      margin-right: -($card-base-height + $picked-card-space);
+    }
+
+    &--bottom {
+      align-self: flex-end;
     }
   }
 }
