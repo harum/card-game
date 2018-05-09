@@ -51,3 +51,7 @@ plugins:
       languages:
         javascript:
           mass_threshold: 40
+
+exclude_patterns:
+  - .codeclimate.yml
+  - scripts/*
