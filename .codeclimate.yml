@@ -32,6 +32,22 @@ checks:
       threshold: # language-specific defaults. an override will affect all languages.
 plugins:
   eslint:
-    enabled: false
+    enabled: true
+  csslint:
+    enabled: true
   scss-lint:
     enabled: true
+  fixme:
+    enabled: true
+    config:
+      strings:
+        - FIXME
+        - HACK
+        - BUG
+        - XXX
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 40
