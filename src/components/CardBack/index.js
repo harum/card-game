@@ -1,10 +1,9 @@
 import React from 'react';
+import './style.scss';
 
 const CardBack = () =>
   (
-    <div>
-      back
-    </div>
+    <div className="c-card-back" />
   );
 
 export default CardBack;

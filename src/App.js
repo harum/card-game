@@ -6,7 +6,9 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
+import EnemyHandCards from './components/EnemyHandCards';
 
+const enemyCards = [{}, {}, {}, {}, {}];
 const cards = [
   {
     type: 'spade',
@@ -100,10 +102,23 @@ class App extends Component {
     return (
       <div>
         <Table>
-          <HandCards
-            cards={cards}
-            onCardClicked={index => this.pickCard(index)}
-          />
+          <div
+            className="slot-left"
+            slot="left"
+          >
+            <HandCards
+              cards={cards}
+              onCardClicked={index => this.pickCard(index)}
+            />
+          </div>
+          <div
+            className="slot-right"
+            slot="right"
+          >
+            <EnemyHandCards
+              cards={enemyCards}
+            />
+          </div>
         </Table>
       </div>
     );
