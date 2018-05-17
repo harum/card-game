@@ -1,7 +1,7 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
 .c-hand-cards {
-  height: $card-base-height * 1.5;
+  height: $card-base-height * $card-zoom;
   width: 426px;
 
   &__item {
