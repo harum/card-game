@@ -14,6 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &--left {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
   }
 
   &__card_placeholder {
@@ -26,12 +36,14 @@
 
     &--left {
       transform: rotate(90deg);
-      margin-left: -($card-base-height + $picked-card-space);
+      transform-origin: bottom left;
+      margin-top: $card-base-width * 1.5 * -1;
     }
 
     &--right {
       transform: rotate(270deg);
-      margin-right: -($card-base-height + $picked-card-space);
+      transform-origin: bottom right;
+      margin-top: $card-base-width * 1.5 * -1;
     }
 
     &--bottom {

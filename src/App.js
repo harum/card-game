@@ -42,7 +42,7 @@ const cards = [
     type: 'spade',
     number: '6',
     eligible: true,
-    picked: true
+    picked: false
   },
   {
     type: 'heart',

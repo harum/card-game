@@ -12,13 +12,13 @@ const Table = ({ children }) => (
     </div>
     <div className="c-table__item" />
 
-    <div className="c-table__item">
+    <div className="c-table__item c-table__item--left">
       <div className="c-table__card_placeholder c-table__card_placeholder--left">
         {children}
       </div>
     </div>
     <div className="c-table__item" />
-    <div className="c-table__item">
+    <div className="c-table__item c-table__item--right">
       <div className="c-table__card_placeholder c-table__card_placeholder--right">
         {children}
       </div>
