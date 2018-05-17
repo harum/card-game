@@ -4,8 +4,8 @@ $shown-card-width: ($card-base-width - $card-base-left-margin) * $card-zoom;
 $number-of-stacked-cards: 12;
 
 .c-hand-cards {
-  height: $card-base-height * $card-zoom;
-  width: ($shown-card-width * $number-of-stacked-cards) + ($card-base-width * $card-zoom);  /* stacked card width + last card width */
+  height: $card-height-one-half;
+  width: ($shown-card-width * $number-of-stacked-cards) + $card-width-one-half;  /* stacked card width + last card width */
 
   &__item {
     bottom: 0;

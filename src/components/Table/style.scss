@@ -27,7 +27,7 @@
   }
 
   &__card_placeholder {
-    height: $card-base-height * $card-zoom;
+    height: $card-height-one-half;
 
     &--top {
       align-self: flex-start;
@@ -37,13 +37,13 @@
     &--left {
       transform: rotate(90deg);
       transform-origin: bottom left;
-      margin-top: -1 * $card-base-height * $card-zoom;
+      margin-top: -1 * $card-height-one-half;
     }
 
     &--right {
       transform: rotate(270deg);
       transform-origin: bottom right;
-      margin-top: -1 * $card-base-height * $card-zoom;
+      margin-top: -1 * $card-height-one-half;
     }
 
     &--bottom {
