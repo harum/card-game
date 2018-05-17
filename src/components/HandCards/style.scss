@@ -1,8 +1,11 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
+$shown-card-width: ($card-base-width - $card-base-left-margin) * $card-zoom;
+$number-of-stacked-cards: 12;
+
 .c-hand-cards {
   height: $card-base-height * $card-zoom;
-  width: 426px;
+  width: ($shown-card-width * $number-of-stacked-cards) + ($card-base-width * $card-zoom);  /* stacked card width + last card width */
 
   &__item {
     bottom: 0;
@@ -10,7 +13,7 @@
     position: relative;
 
     &:not(:first-child) {
-      margin-left: -66px;
+      margin-left: -1 * $card-base-left-margin * $card-zoom;    /* make cards stacked (but not fully stacked, still can see the card number) */
     }
   }
 }

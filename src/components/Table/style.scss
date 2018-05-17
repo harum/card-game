@@ -37,13 +37,13 @@
     &--left {
       transform: rotate(90deg);
       transform-origin: bottom left;
-      margin-top: $card-base-width * $card-zoom * -1;
+      margin-top: -1 * $card-base-height * $card-zoom;
     }
 
     &--right {
       transform: rotate(270deg);
       transform-origin: bottom right;
-      margin-top: $card-base-width * $card-zoom * -1;
+      margin-top: -1 * $card-base-height * $card-zoom;
     }
 
     &--bottom {

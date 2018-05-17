@@ -63,6 +63,12 @@ const cards = [
     picked: false
   },
   {
+    type: 'spade',
+    number: '10',
+    eligible: true,
+    picked: false
+  },
+  {
     type: 'heart',
     number: 'J',
     eligible: false,
