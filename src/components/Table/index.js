@@ -4,28 +4,33 @@ import './style.scss';
 
 const Table = ({ children }) => (
   <div className="c-table">
-    <div className="c-table__left">
-      <div className="c-table__left-card-holder">
+    <div className="c-table__item" />
+    <div className="c-table__item">
+      <div className="c-table__card-placeholder c-table__card-placeholder--top">
         {children}
       </div>
     </div>
-    <div className="c-table__middle">
-      <div className="c-table__middle-top">
-        <div className="c-table__middle-top-card-holder">
-          {children}
-        </div>
-      </div>
-      <div className="c-table__middle-bottom">
-        <div className="c-table__middle-bottom-card-holder">
-          {children}
-        </div>
-      </div>
-    </div>
-    <div className="c-table__right">
-      <div className="c-table__right-card-holder">
+    <div className="c-table__item" />
+
+    <div className="c-table__item c-table__item--left">
+      <div className="c-table__card-placeholder c-table__card-placeholder--left">
         {children}
       </div>
     </div>
+    <div className="c-table__item" />
+    <div className="c-table__item c-table__item--right">
+      <div className="c-table__card-placeholder c-table__card-placeholder--right">
+        {children}
+      </div>
+    </div>
+
+    <div className="c-table__item" />
+    <div className="c-table__item">
+      <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
+        {children}
+      </div>
+    </div>
+    <div className="c-table__item" />
   </div>
 );
 
