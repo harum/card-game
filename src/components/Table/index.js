@@ -6,27 +6,27 @@ const Table = ({ children }) => (
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">
-      <div className="c-table__card_placeholder c-table__card_placeholder--top">
+      <div className="c-table__card-placeholder c-table__card-placeholder--top">
         {children}
       </div>
     </div>
     <div className="c-table__item" />
 
     <div className="c-table__item c-table__item--left">
-      <div className="c-table__card_placeholder c-table__card_placeholder--left">
+      <div className="c-table__card-placeholder c-table__card-placeholder--left">
         {children}
       </div>
     </div>
     <div className="c-table__item" />
     <div className="c-table__item c-table__item--right">
-      <div className="c-table__card_placeholder c-table__card_placeholder--right">
+      <div className="c-table__card-placeholder c-table__card-placeholder--right">
         {children}
       </div>
     </div>
 
     <div className="c-table__item" />
     <div className="c-table__item">
-      <div className="c-table__card_placeholder c-table__card_placeholder--bottom">
+      <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
         {children}
       </div>
     </div>
