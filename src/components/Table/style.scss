@@ -6,62 +6,58 @@ $picked-card-space: 30px;
 
 .c-table {
   background: $color-green;
-
-  width: 100%;
   height: 100vh;
+  width: 100%;
 
   &__left {
-    position: relative;
     display: inline-block;
-    width: 25%;
     height: 100%;
+    position: relative;
+    width: 25%;
+  }
 
-    &__card-holder {
-      transform: rotate(90deg);
-      position: absolute;
-      left: $card-base-height + ($picked-card-space / 2);
-      top: 12%;
-    }
+  &__left-card-holder {
+    left: $card-base-height + ($picked-card-space / 2);
+    position: absolute;
+    top: 12%;
+    transform: rotate(90deg);
   }
 
   &__middle {
-    position: relative;
     display: inline-block;
-    width: 50%;
     height: 100%;
+    position: relative;
+    width: 50%;
+  }
 
-    &__top {
-      height: 50%;
+  &__middle-top,
+  &__middle-bottom {
+    height: 50%;
+  }
 
-      &__card-holder {
-        transform: rotate(180deg);
-        position: absolute;
-        right: 28%;
-      }
-    }
+  &__middle-top-card-holder {
+    position: absolute;
+    right: 28%;
+    transform: rotate(180deg);
+  }
 
-    &__bottom {
-      height: 50%;
-
-      &__card-holder {
-        position: absolute;
-        left: 18%;
-        bottom: 0;
-      }
-    }
+  &__middle-bottom-card-holder {
+    bottom: 0;
+    left: 18%;
+    position: absolute;
   }
 
   &__right {
-    position: relative;
     display: inline-block;
-    width: 25%;
     height: 100%;
+    position: relative;
+    width: 25%;
+  }
 
-    &__card-holder {
-      transform: rotate(270deg);
-      position: absolute;
-      right: $card-base-height + ($picked-card-space / 2);
-      bottom: 12%;
-    }
+  &__right-card-holder {
+    bottom: 12%;
+    position: absolute;
+    right: $card-base-height + ($picked-card-space / 2);
+    transform: rotate(270deg);
   }
 }
