@@ -26,11 +26,13 @@
   }
 
   &__image {
-    height: $card-image-one-half;
+    max-height: $card-image-height-one-half;
+    width: $card-image-width-one-half;
   }
 
   &__image--small {
-    height: $card-image-base-height;
+    max-height: $card-image-base-height;
+    width: $card-image-base-width;
   }
 
   &__top {
