@@ -7,6 +7,7 @@ module.exports = {
     "browser": true,
     "es6": true,
     "jquery": true
+    "jest": true
   },
   "extends": "airbnb",
   "parserOptions": {
