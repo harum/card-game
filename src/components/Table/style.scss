@@ -14,13 +14,13 @@ $picked-card-space: 30px;
     height: 100%;
     position: relative;
     width: 25%;
+  }
 
-    &__card-holder {
-      left: $card-base-height + ($picked-card-space / 2);
-      position: absolute;
-      top: 12%;
-      transform: rotate(90deg);
-    }
+  &__left-card-holder {
+    left: $card-base-height + ($picked-card-space / 2);
+    position: absolute;
+    top: 12%;
+    transform: rotate(90deg);
   }
 
   &__middle {
@@ -28,26 +28,23 @@ $picked-card-space: 30px;
     height: 100%;
     position: relative;
     width: 50%;
+  }
 
-    &__top {
-      height: 50%;
+  &__middle-top,
+  &__middle-bottom {
+    height: 50%;
+  }
 
-      &__card-holder {
-        position: absolute;
-        right: 28%;
-        transform: rotate(180deg);
-      }
-    }
+  &__middle-top-card-holder {
+    position: absolute;
+    right: 28%;
+    transform: rotate(180deg);
+  }
 
-    &__bottom {
-      height: 50%;
-
-      &__card-holder {
-        bottom: 0;
-        left: 18%;
-        position: absolute;
-      }
-    }
+  &__middle-bottom-card-holder {
+    bottom: 0;
+    left: 18%;
+    position: absolute;
   }
 
   &__right {
@@ -55,12 +52,12 @@ $picked-card-space: 30px;
     height: 100%;
     position: relative;
     width: 25%;
+  }
 
-    &__card-holder {
-      bottom: 12%;
-      position: absolute;
-      right: $card-base-height + ($picked-card-space / 2);
-      transform: rotate(270deg);
-    }
+  &__right-card-holder {
+    bottom: 12%;
+    position: absolute;
+    right: $card-base-height + ($picked-card-space / 2);
+    transform: rotate(270deg);
   }
 }
