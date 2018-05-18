@@ -6,10 +6,21 @@ import cardColor from '../../helpers/cardColor';
 import CardNumber from '../CardNumber';
 import './style.scss';
 
-const Card = ({ type, number, onClick }) => {
+const Card = ({
+  type,
+  number,
+  onClick,
+  size
+}) => {
   const containerClass = classNames(
     'c-card',
-    `c-card--${cardColor.getColor(type)}`
+    `c-card--${cardColor.getColor(type)}`,
+    `c-card--${size}`
+  );
+
+  const imageClass = classNames(
+    'c-card__image',
+    `c-card__image--${size}`
   );
 
   const pickCard = () => onClick();
@@ -23,7 +34,7 @@ const Card = ({ type, number, onClick }) => {
         <img
           src={cardImage.mainImage(type, number)}
           alt={type}
-          className="c-card__image"
+          className={imageClass}
         />
         <div className="c-card__bottom">
           <CardNumber type={type} number={number} reverse />
@@ -36,10 +47,12 @@ const Card = ({ type, number, onClick }) => {
 Card.propTypes = {
   type: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
+  size: PropTypes.string,
   onClick: PropTypes.func
 };
 
 Card.defaultProps = {
+  size: '',
   onClick: () => {}
 };
 

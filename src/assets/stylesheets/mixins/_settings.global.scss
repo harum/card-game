@@ -16,6 +16,18 @@ $text-line-height: 1.55 !default;
 
 
 //
+// Spacing
+//
+$spacing-super: 3em !default;
+$spacing-xlarge: 2em !default;
+$spacing-large: 1.5em !default;
+$spacing-medium: 1em !default;
+$spacing-small: .5em !default;
+$spacing-xsmall: .25em !default;
+$spacing-tiny: .125em !default;
+
+
+//
 // Colors
 //
 
@@ -33,3 +45,4 @@ $color-green: #18500f !default;
 // base on poker card standard size
 $card-base-height: 89px;
 $card-base-width: 64px;
+$card-image-base-height: 50px;
