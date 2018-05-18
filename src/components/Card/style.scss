@@ -16,9 +16,9 @@
 
   &--small {
     font-size: $text-font-size-xsmall;
-    height: $card-base-height * 1;
+    height: $card-base-height;
     padding: $spacing-xsmall;
-    width: $card-base-width * 1;
+    width: $card-base-width;
   }
 
   &--red {
