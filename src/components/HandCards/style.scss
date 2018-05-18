@@ -9,7 +9,8 @@
     position: relative;
 
     &:not(:first-child) {
-      margin-left: -1 * $card-base-left-margin * $card-zoom;    /* make cards stacked (but not fully stacked, still can see the card number) */
+      // make cards stacked (but not fully stacked, still can see the card number)
+      margin-left: -1 * $card-base-left-margin * $card-zoom;
     }
   }
 }
