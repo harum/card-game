@@ -11,15 +11,28 @@
   font-family: 'Quicksand', sans-serif;
   height: $card-height-one-half;
   justify-content: space-between;
-  padding: .5em;
+  padding: $spacing-small;
   width: $card-width-one-half;
+
+  &--small {
+    font-size: $text-font-size-xsmall;
+    height: $card-base-height;
+    padding: $spacing-xsmall;
+    width: $card-base-width;
+  }
 
   &--red {
     color: $color-red;
   }
 
   &__image {
-    width: 35px;
+    max-height: $card-image-height-one-half;
+    width: $card-image-width-one-half;
+  }
+
+  &__image--small {
+    max-height: $card-image-base-height;
+    width: $card-image-base-width;
   }
 
   &__top {
