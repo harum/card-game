@@ -33,3 +33,9 @@ $color-green: #18500f !default;
 // base on poker card standard size
 $card-base-height: 89px;
 $card-base-width: 64px;
+
+$card-base-left-margin: 44px;
+$card-zoom: 1.5 !default;
+
+$card-height-one-half: $card-base-height * $card-zoom;
+$card-width-one-half: $card-base-width * $card-zoom;
