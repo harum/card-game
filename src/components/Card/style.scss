@@ -9,10 +9,10 @@
   display: flex;
   flex-direction: column;
   font-family: 'Quicksand', sans-serif;
-  height: $card-base-height * 1.5;
+  height: $card-height-one-half;
   justify-content: space-between;
   padding: .5em;
-  width: $card-base-width * 1.5;
+  width: $card-width-one-half;
 
   &--red {
     color: $color-red;

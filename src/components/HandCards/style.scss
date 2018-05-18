@@ -1,15 +1,12 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
-$picked-card-space: 30px;
-
 .c-hand-cards {
-  height: ($card-base-height * 2) + $picked-card-space;
-  position: relative;
+  height: $card-height-one-half;
 
   &__item {
     bottom: 0;
     display: inline-block;
-    position: absolute;
+    position: relative;
 
     &:hover {
       box-shadow: 0 0 20px 5px $color-black;
@@ -18,6 +15,11 @@ $picked-card-space: 30px;
 
     &:active {
       box-shadow: 0 0 20px 1px $color-black;
+    }
+
+    &:not(:first-child) {
+      // make cards stacked (but not fully stacked, still can see the card number)
+      margin-left: -1 * $card-base-left-margin * $card-zoom;
     }
   }
 }

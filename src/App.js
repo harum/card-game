@@ -42,7 +42,7 @@ const cards = [
     type: 'spade',
     number: '6',
     eligible: true,
-    picked: true
+    picked: false
   },
   {
     type: 'heart',
@@ -59,6 +59,12 @@ const cards = [
   {
     type: 'diamond',
     number: '9',
+    eligible: true,
+    picked: false
+  },
+  {
+    type: 'spade',
+    number: '10',
     eligible: true,
     picked: false
   },
