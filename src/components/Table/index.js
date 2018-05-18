@@ -5,24 +5,24 @@ import './style.scss';
 const Table = ({ children }) => (
   <div className="c-table">
     <div className="c-table__left">
-      <div className="c-table__left__card-holder">
+      <div className="c-table__left-card-holder">
         {children}
       </div>
     </div>
     <div className="c-table__middle">
-      <div className="c-table__middle__top">
-        <div className="c-table__middle__top__card-holder">
+      <div className="c-table__middle-top">
+        <div className="c-table__middle-top-card-holder">
           {children}
         </div>
       </div>
-      <div className="c-table__middle__bottom">
-        <div className="c-table__middle__bottom__card-holder">
+      <div className="c-table__middle-bottom">
+        <div className="c-table__middle-bottom-card-holder">
           {children}
         </div>
       </div>
     </div>
     <div className="c-table__right">
-      <div className="c-table__right__card-holder">
+      <div className="c-table__right-card-holder">
         {children}
       </div>
     </div>
