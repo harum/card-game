@@ -4,11 +4,14 @@
   background: $color-white;
   border-radius: 2px;
   box-shadow: -1px 1px 1px 1px $color-grey;
-  height: $card-base-height * 2;
-  width: $card-base-width * 2;
+  height: $card-base-height * 1.5;
+  width: $card-base-width * 1.5;
   background-image: url('../../assets/images/backPattern.svg');
   background-repeat: repeat;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: .5em;
 
   &:hover {
     box-shadow: 0 0 20px 5px $color-grey;

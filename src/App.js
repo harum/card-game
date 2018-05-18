@@ -8,7 +8,9 @@ import Table from './components/Table';
 import HandCards from './components/HandCards';
 import EnemyHandCards from './components/EnemyHandCards';
 
-const enemyCards = [{}, {}, {}, {}, {}];
+const enemyCardsP1 = Array(3).fill({});
+const enemyCardsP2 = Array(12).fill({});
+const enemyCardsP3 = Array(14).fill({});
 const cards = [
   {
     type: 'spade',
@@ -116,7 +118,23 @@ class App extends Component {
             slot="right"
           >
             <EnemyHandCards
-              cards={enemyCards}
+              cards={enemyCardsP1}
+            />
+          </div>
+          <div
+            className="slot-top"
+            slot="top"
+          >
+            <EnemyHandCards
+              cards={enemyCardsP2}
+            />
+          </div>
+          <div
+            className="slot-bottom"
+            slot="bottom"
+          >
+            <EnemyHandCards
+              cards={enemyCardsP3}
             />
           </div>
         </Table>
