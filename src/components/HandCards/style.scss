@@ -8,6 +8,15 @@
     display: inline-block;
     position: relative;
 
+    &:hover {
+      box-shadow: 0 0 20px 5px $color-black;
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: 0 0 20px 1px $color-black;
+    }
+
     &:not(:first-child) {
       // make cards stacked (but not fully stacked, still can see the card number)
       margin-left: -1 * $card-base-left-margin * $card-zoom;

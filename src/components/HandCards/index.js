@@ -13,41 +13,38 @@ const getCardStyle = (card, index) => ({
   bottom: `${(card.picked ? cardDim.space : 0)}px`
 });
 
-const HandCards = ({ cards, onCardClicked }) => {
-  const pickCard = index => onCardClicked(index);
-
-  return (
-    <div
-      className="c-hand-cards"
-      style={getHandCardStyle(cards.length)}
-    >
-      { cards.map((card, index) =>
-        (
-          <div
-            style={getCardStyle(card, index)}
-            className="c-hand-cards__item"
-            key={`${card.type}-${card.number}`}
-          >
-            <Card
-              type={card.type}
-              number={card.number}
-              onClick={() => pickCard(index)}
-            />
-          </div>
-        ))
-      }
-    </div>
-  );
-};
+const HandCards = ({ cards, onCardClick }) => (
+  <div
+    className="c-hand-cards"
+    style={getHandCardStyle(cards.length)}
+  >
+    { cards.map((card, index) =>
+      (
+        <div
+          style={getCardStyle(card, index)}
+          className="c-hand-cards__item"
+          role="presentation"
+          key={`${card.type}-${card.number}`}
+          onClick={() => onCardClick(index)}
+        >
+          <Card
+            type={card.type}
+            number={card.number}
+          />
+        </div>
+      ))
+    }
+  </div>
+);
 
 HandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
-  onCardClicked: PropTypes.func
+  onCardClick: PropTypes.func
 };
 
 HandCards.defaultProps = {
   cards: [],
-  onCardClicked: () => {}
+  onCardClick: () => {}
 };
 
 export default HandCards;
