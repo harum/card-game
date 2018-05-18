@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import cardImage from '../../helpers/cardImage';
 import cardColor from '../../helpers/cardColor';
+import propsHelper from '../../helpers/propsHelper';
 import CardNumber from '../CardNumber';
 import './style.scss';
 
@@ -40,8 +41,7 @@ const Card = ({
 };
 
 Card.propTypes = {
-  type: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  ...propsHelper.cardBaseProps,
   size: PropTypes.string
 };
 
