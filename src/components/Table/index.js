@@ -3,30 +3,37 @@ import PropTypes from 'prop-types';
 import { Slot } from 'react-slot';
 import './style.scss';
 
+
 const Table = ({ children }) => (
+
   <div className="c-table">
-    <div className="c-table__left">
-      <div className="c-table__left__card-holder">
+    <div className="c-table__item" />
+    <div className="c-table__item">
+      <div className="c-table__card-placeholder c-table__card-placeholder--top">
+        <Slot name="top" as="top" content={children} />
+      </div>
+    </div>
+    <div className="c-table__item" />
+
+    <div className="c-table__item c-table__item--left">
+      <div className="c-table__card-placeholder c-table__card-placeholder--left">
         <Slot name="left" as="left" content={children} />
       </div>
     </div>
-    <div className="c-table__middle">
-      <div className="c-table__middle__top">
-        <div className="c-table__middle__top__card-holder">
-          <Slot name="top" as="top" content={children} />
-        </div>
-      </div>
-      <div className="c-table__middle__bottom">
-        <div className="c-table__middle__bottom__card-holder">
-          <Slot name="bottom" as="bottom" content={children} />
-        </div>
-      </div>
-    </div>
-    <div className="c-table__right">
-      <div className="c-table__right__card-holder">
+    <div className="c-table__item" />
+    <div className="c-table__item c-table__item--right">
+      <div className="c-table__card-placeholder c-table__card-placeholder--right">
         <Slot name="right" as="right" content={children} />
       </div>
     </div>
+
+    <div className="c-table__item" />
+    <div className="c-table__item">
+      <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
+        <Slot name="bottom" as="bottom" content={children} />
+      </div>
+    </div>
+    <div className="c-table__item" />
   </div>
 );
 

@@ -6,11 +6,9 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
-import EnemyHandCards from './components/EnemyHandCards';
-
-const enemyCardsP1 = Array(3).fill({});
-const enemyCardsP2 = Array(12).fill({});
-const enemyCardsP3 = Array(14).fill({});
+// import EnemyHandCards from './components/EnemyHandCards';
+//
+// const enemyCardsP1 = Array(3).fill({});
 const cards = [
   {
     type: 'spade',
@@ -46,7 +44,7 @@ const cards = [
     type: 'spade',
     number: '6',
     eligible: true,
-    picked: true
+    picked: false
   },
   {
     type: 'heart',
@@ -63,6 +61,12 @@ const cards = [
   {
     type: 'diamond',
     number: '9',
+    eligible: true,
+    picked: false
+  },
+  {
+    type: 'spade',
+    number: '10',
     eligible: true,
     picked: false
   },
@@ -105,36 +109,11 @@ class App extends Component {
       <div>
         <Table>
           <div
-            className="slot-left"
-            slot="left"
+            slot="top"
           >
             <HandCards
               cards={cards}
               onCardClicked={index => this.pickCard(index)}
-            />
-          </div>
-          <div
-            className="slot-right"
-            slot="right"
-          >
-            <EnemyHandCards
-              cards={enemyCardsP1}
-            />
-          </div>
-          <div
-            className="slot-top"
-            slot="top"
-          >
-            <EnemyHandCards
-              cards={enemyCardsP2}
-            />
-          </div>
-          <div
-            className="slot-bottom"
-            slot="bottom"
-          >
-            <EnemyHandCards
-              cards={enemyCardsP3}
             />
           </div>
         </Table>
