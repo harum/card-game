@@ -25,6 +25,11 @@ const numOptions = {
   A: 'A'
 };
 
+const sizeOptions = {
+  small: 'small',
+  normal: 'normal'
+};
+
 const typeOptions = {
   spade: 'spade',
   heart: 'heart',
@@ -35,15 +40,13 @@ const typeOptions = {
 story.add('Default Card', () => {
   const num = Lib.select('number', numOptions, 'A');
   const type = Lib.select('type', typeOptions, 'spade');
-  const cardClicked = () => {
-    console.log('card-clicked'); // eslint-disable-line no-console
-  };
+  const size = Lib.select('size', sizeOptions, 'normal');
 
   return (
     <Card
       type={type}
       number={num}
-      onClick={() => cardClicked()}
+      size={size}
     />
   );
 });

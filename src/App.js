@@ -11,16 +11,19 @@ import HandCards from './components/HandCards';
 // const enemyCardsP1 = Array(3).fill({});
 const cards = [
   {
+    isBack: true,
     type: 'spade',
     number: '1',
-    eligible: false,
-    picked: false
+    eligible: true,
+    picked: false,
+
   },
   {
     type: 'heart',
     number: '2',
     eligible: false,
-    picked: false
+    picked: false,
+    isBack: false
   },
   {
     type: 'club',
@@ -110,6 +113,30 @@ class App extends Component {
         <Table>
           <div
             slot="top"
+          >
+            <HandCards
+              cards={cards}
+              onCardClicked={index => this.pickCard(index)}
+            />
+          </div>
+          <div
+            slot="left"
+          >
+            <HandCards
+              cards={cards}
+              onCardClicked={index => this.pickCard(index)}
+            />
+          </div>
+          <div
+            slot="right"
+          >
+            <HandCards
+              cards={cards}
+              onCardClicked={index => this.pickCard(index)}
+            />
+          </div>
+          <div
+            slot="bottom"
           >
             <HandCards
               cards={cards}
