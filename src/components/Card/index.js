@@ -7,11 +7,9 @@ import CardNumber from '../CardNumber';
 import './style.scss';
 
 const Card = ({
-  type, number, onClick, isBack
+  type, number, onClick
 }) => {
-  const containerClass = isBack ?
-    classNames('c-card-back') :
-    classNames(
+  const containerClass = classNames(
       'c-card',
       `c-card--${cardColor.getColor(type)}`
     );
@@ -21,19 +19,24 @@ const Card = ({
 
   return (
     <div>
-      <div className={containerClass} role="presentation" onClick={() => pickCard()}>
-        <div className="c-card__top">
-          <CardNumber type={type} number={number} />
+      { number !== '' ? (
+        <div className={containerClass} role="presentation" onClick={() => pickCard()}>
+          <div className="c-card__top">
+            <CardNumber type={type} number={number} />
+          </div>
+          <img
+            src={cardImage.mainImage(type, number)}
+            alt={type}
+            className="c-card__image"
+          />
+          <div className="c-card__bottom">
+            <CardNumber type={type} number={number} reverse />
+          </div>
         </div>
-        <img
-          src={cardImage.mainImage(type, number)}
-          alt={type}
-          className="c-card__image"
-        />
-        <div className="c-card__bottom">
-          <CardNumber type={type} number={number} reverse />
-        </div>
-      </div>
+      ) : (
+        <div className="c-card-back" role="presentation" onClick={() => pickCard()} />
+      )
+    }
     </div>
   );
 };
@@ -42,13 +45,11 @@ Card.propTypes = {
   type: PropTypes.string,
   number: PropTypes.string,
   onClick: PropTypes.func,
-  isBack: PropTypes.bool
 };
 
 Card.defaultProps = {
   type: '',
   number: '',
-  isBack: false,
   onClick: () => {}
 };
 

@@ -6,24 +6,21 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
-// import EnemyHandCards from './components/EnemyHandCards';
-//
-// const enemyCardsP1 = Array(3).fill({});
+
+const enemyCards = Array(12).fill({});
+
 const cards = [
   {
-    isBack: true,
     type: 'spade',
     number: '1',
     eligible: true,
     picked: false,
-
   },
   {
     type: 'heart',
     number: '2',
     eligible: false,
     picked: false,
-    isBack: false
   },
   {
     type: 'club',
@@ -115,7 +112,7 @@ class App extends Component {
             slot="top"
           >
             <HandCards
-              cards={cards}
+              cards={enemyCards}
               onCardClicked={index => this.pickCard(index)}
             />
           </div>
@@ -123,7 +120,7 @@ class App extends Component {
             slot="left"
           >
             <HandCards
-              cards={cards}
+              cards={enemyCards}
               onCardClicked={index => this.pickCard(index)}
             />
           </div>
@@ -131,7 +128,7 @@ class App extends Component {
             slot="right"
           >
             <HandCards
-              cards={cards}
+              cards={enemyCards}
               onCardClicked={index => this.pickCard(index)}
             />
           </div>
@@ -140,7 +137,6 @@ class App extends Component {
           >
             <HandCards
               cards={cards}
-              onCardClicked={index => this.pickCard(index)}
             />
           </div>
         </Table>
