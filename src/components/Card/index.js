@@ -10,9 +10,9 @@ const Card = ({
   type, number, onClick
 }) => {
   const containerClass = classNames(
-      'c-card',
-      `c-card--${cardColor.getColor(type)}`
-    );
+    'c-card',
+    `c-card--${cardColor.getColor(type)}`
+  );
 
   const pickCard = () => onClick();
 
@@ -36,7 +36,7 @@ const Card = ({
       ) : (
         <div className="c-card-back" role="presentation" onClick={() => pickCard()} />
       )
-    }
+      }
     </div>
   );
 };
@@ -44,7 +44,7 @@ const Card = ({
 Card.propTypes = {
   type: PropTypes.string,
   number: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 Card.defaultProps = {
