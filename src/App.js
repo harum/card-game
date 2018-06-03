@@ -7,20 +7,19 @@ import React, { Component } from 'react';
 import Table from './components/Table';
 import HandCards from './components/HandCards';
 
-const enemyCards = Array(12).fill({});
 
 const cards = [
   {
     type: 'spade',
     number: '1',
     eligible: true,
-    picked: false,
+    picked: false
   },
   {
     type: 'heart',
     number: '2',
     eligible: false,
-    picked: false,
+    picked: false
   },
   {
     type: 'club',
@@ -108,37 +107,10 @@ class App extends Component {
     return (
       <div>
         <Table>
-          <div
-            slot="top"
-          >
-            <HandCards
-              cards={enemyCards}
-              onCardClicked={index => this.pickCard(index)}
-            />
-          </div>
-          <div
-            slot="left"
-          >
-            <HandCards
-              cards={enemyCards}
-              onCardClicked={index => this.pickCard(index)}
-            />
-          </div>
-          <div
-            slot="right"
-          >
-            <HandCards
-              cards={enemyCards}
-              onCardClicked={index => this.pickCard(index)}
-            />
-          </div>
-          <div
-            slot="bottom"
-          >
-            <HandCards
-              cards={cards}
-            />
-          </div>
+          <HandCards
+            cards={cards}
+            onCardClick={index => this.pickCard(index)}
+          />
         </Table>
       </div>
     );
