@@ -8,11 +8,12 @@ import Table from './components/Table';
 import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 
+
 const cards = [
   {
     type: 'spade',
     number: '1',
-    eligible: false,
+    eligible: true,
     picked: false
   },
   {
