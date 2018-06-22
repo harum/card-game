@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-<<<<<<< Updated upstream
-const Table = ({ children }) => (
-=======
 const Table = ({ handCards, deck }) => (
-
->>>>>>> Stashed changes
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">

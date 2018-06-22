@@ -6,10 +6,7 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
-<<<<<<< Updated upstream
-=======
 import Deck from './components/Deck';
->>>>>>> Stashed changes
 
 const cards = [
   {
