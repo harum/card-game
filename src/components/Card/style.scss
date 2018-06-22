@@ -1,5 +1,27 @@
 @import '../../assets/stylesheets/mixins/settings.global';
 
+.c-card-back {
+  background: $color-white;
+  background-image: url('../../assets/images/backPattern.svg');
+  background-repeat: repeat;
+  border-radius: 2px;
+  box-shadow: -1px 1px 1px 1px $color-grey;
+  display: flex;
+  flex-direction: column;
+  height: $card-base-height * 1.5;
+  justify-content: space-between;
+  padding: .5em;
+  width: $card-base-width * 1.5;
+
+  &:hover {
+    box-shadow: 0 0 20px 5px $color-grey;
+  }
+
+  &:active {
+    box-shadow: 0 0 20px 1px $color-grey;
+  }
+}
+
 .c-card {
   align-items: center;
   background: $color-white;

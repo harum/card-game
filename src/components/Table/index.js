@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Table = ({ children }) => (
+
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">

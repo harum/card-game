@@ -24,18 +24,25 @@ const Card = ({
   );
 
   return (
-    <div className={containerClass}>
-      <div className="c-card__top">
-        <CardNumber type={type} number={number} />
-      </div>
-      <img
-        src={cardImage.mainImage(type, number)}
-        alt={type}
-        className={imageClass}
-      />
-      <div className="c-card__bottom">
-        <CardNumber type={type} number={number} reverse />
-      </div>
+    <div>
+      { number !== '' && type !== '' ? (
+        <div className={containerClass}>
+          <div className="c-card__top">
+            <CardNumber type={type} number={number} />
+          </div>
+          <img
+            src={cardImage.mainImage(type, number)}
+            alt={type}
+            className={imageClass}
+          />
+          <div className="c-card__bottom">
+            <CardNumber type={type} number={number} reverse />
+          </div>
+        </div>
+      ) : (
+        <div className="c-card-back" />
+      )
+      }
     </div>
   );
 };

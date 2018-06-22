@@ -7,11 +7,12 @@ import React, { Component } from 'react';
 import Table from './components/Table';
 import HandCards from './components/HandCards';
 
+
 const cards = [
   {
     type: 'spade',
     number: '1',
-    eligible: false,
+    eligible: true,
     picked: false
   },
   {
