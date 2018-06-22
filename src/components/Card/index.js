@@ -3,38 +3,44 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import cardImage from '../../helpers/cardImage';
 import cardColor from '../../helpers/cardColor';
+import propsHelper from '../../helpers/propsHelper';
 import CardNumber from '../CardNumber';
 import './style.scss';
 
 const Card = ({
-  type, number, onClick
+  type,
+  number,
+  size
 }) => {
   const containerClass = classNames(
     'c-card',
-    `c-card--${cardColor.getColor(type)}`
+    `c-card--${cardColor.getColor(type)}`,
+    `c-card--${size}`
   );
 
-  const pickCard = () => onClick();
-
+  const imageClass = classNames(
+    'c-card__image',
+    `c-card__image--${size}`
+  );
 
   return (
     <div>
-      { number !== '' ? (
-        <div className={containerClass} role="presentation" onClick={() => pickCard()}>
+      { number !== '' && type !== '' ? (
+        <div className={containerClass}>
           <div className="c-card__top">
             <CardNumber type={type} number={number} />
           </div>
           <img
             src={cardImage.mainImage(type, number)}
             alt={type}
-            className="c-card__image"
+            className={imageClass}
           />
           <div className="c-card__bottom">
             <CardNumber type={type} number={number} reverse />
           </div>
         </div>
       ) : (
-        <div className="c-card-back" role="presentation" onClick={() => pickCard()} />
+        <div className="c-card-back" />
       )
       }
     </div>
@@ -42,15 +48,12 @@ const Card = ({
 };
 
 Card.propTypes = {
-  type: PropTypes.string,
-  number: PropTypes.string,
-  onClick: PropTypes.func
+  ...propsHelper.cardBaseProps,
+  size: PropTypes.string
 };
 
 Card.defaultProps = {
-  type: '',
-  number: '',
-  onClick: () => {}
+  size: ''
 };
 
 export default Card;
