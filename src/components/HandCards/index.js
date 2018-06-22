@@ -5,7 +5,8 @@ import cardDim from '../../helpers/cardDimension';
 import './style.scss';
 
 const getHandCardStyle = numberOfCards => ({
-  width: `${(cardDim.space * (numberOfCards - 1)) + cardDim.oneHalfWidth}px`
+  width: `${(cardDim.space * (numberOfCards - 1)) + cardDim.oneHalfWidth}px`,
+  display: 'none'
 });
 
 const getCardStyle = (card, index) => ({

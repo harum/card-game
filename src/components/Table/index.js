@@ -2,32 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
+<<<<<<< Updated upstream
 const Table = ({ children }) => (
+=======
+const Table = ({ handCards, deck }) => (
+
+>>>>>>> Stashed changes
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">
       <div className="c-table__card-placeholder c-table__card-placeholder--top">
-        {children}
+        top
       </div>
     </div>
     <div className="c-table__item" />
 
     <div className="c-table__item c-table__item--left">
       <div className="c-table__card-placeholder c-table__card-placeholder--left">
-        {children}
+        left
       </div>
     </div>
-    <div className="c-table__item" />
+    <div className="c-table__item">
+      {deck}
+    </div>
     <div className="c-table__item c-table__item--right">
       <div className="c-table__card-placeholder c-table__card-placeholder--right">
-        {children}
+        right
       </div>
     </div>
 
     <div className="c-table__item" />
     <div className="c-table__item">
       <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
-        {children}
+        {handCards}
       </div>
     </div>
     <div className="c-table__item" />
@@ -35,7 +42,8 @@ const Table = ({ children }) => (
 );
 
 Table.propTypes = {
-  children: PropTypes.object.isRequired
+  handCards: PropTypes.object.isRequired,
+  deck: PropTypes.object.isRequired
 };
 
 Table.defaultProps = {

@@ -6,6 +6,10 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
+<<<<<<< Updated upstream
+=======
+import Deck from './components/Deck';
+>>>>>>> Stashed changes
 
 const cards = [
   {
@@ -105,12 +109,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Table>
-          <HandCards
+        <Table
+          handCards={<HandCards
             cards={cards}
             onCardClick={index => this.pickCard(index)}
-          />
-        </Table>
+          />}
+          deck={
+            <Deck />
+          }
+        />
       </div>
     );
   }
