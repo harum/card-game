@@ -4,20 +4,20 @@ import Card from '../Card';
 import cardDim from '../../helpers/cardDimension';
 import './style.scss';
 
-const getHandCardStyle = (numberOfCards, spread) => ({
+const getHandCardStyle = (numberOfCards, showCard) => ({
   width: `${(cardDim.space * (numberOfCards - 1)) + cardDim.oneHalfWidth}px`,
-  display: spread ? 'block' : 'none'
+  display: showCard ? 'block' : 'none'
 });
 
 const getCardStyle = (card, index) => ({
   zIndex: `${index}`,
-  bottom: `${(card.picked ? cardDim.space : 10)}px`
+  bottom: `${(card.picked ? cardDim.space : 0)}px`
 });
 
-const HandCards = ({ cards, spread, onCardClick }) => (
+const HandCards = ({ cards, showCard, onCardClick }) => (
   <div
     className="c-hand-cards"
-    style={getHandCardStyle(cards.length, spread)}
+    style={getHandCardStyle(cards.length, showCard)}
   >
     { cards.map((card, index) =>
       (
@@ -40,13 +40,13 @@ const HandCards = ({ cards, spread, onCardClick }) => (
 
 HandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
-  spread: PropTypes.bool,
+  showCard: PropTypes.bool,
   onCardClick: PropTypes.func
 };
 
 HandCards.defaultProps = {
   cards: [],
-  spread: false,
+  showCard: false,
   onCardClick: () => {}
 };
 

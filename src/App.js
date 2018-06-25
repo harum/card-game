@@ -95,7 +95,8 @@ class App extends Component {
     super(props);
     this.state = {
       cards,
-      spread: false
+      spread: false,
+      showCard: false
     };
   }
 
@@ -107,8 +108,14 @@ class App extends Component {
 
   spreadCards = () => {
     this.setState({
-      spread: !this.state.spread
+      spread: true
     });
+    setTimeout(
+      () => this.setState({
+        showCard: true
+      }),
+      1200
+    );
   }
 
   render() {
@@ -117,17 +124,18 @@ class App extends Component {
         <Table
           handCards={<HandCards
             cards={cards}
-            spread={this.state.spread}
+            showCard={this.state.showCard}
             onCardClick={index => this.pickCard(index)}
           />}
           deck={
             <Deck
               spread={this.state.spread}
+              showCard={this.state.showCard}
             />
           }
           playButton={
             <button onClick={this.spreadCards}>
-              {this.state.spread ? 'Collect Card!' : 'Spread Card!'}
+              Spread Card!
             </button>
           }
         />

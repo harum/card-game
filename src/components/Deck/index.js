@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Card from '../Card';
 import cardDim from '../../helpers/cardDimension';
 import './style.scss';
 
-const cardDeck = (spread) => {
+const getCardContainerClass = spread => classNames({ 'c-deck-container--spread': spread });
+
+const getCardContainerStyle = showCard => ({ display: showCard ? 'none' : 'block' });
+
+const getCardDeck = (spread) => {
   const cards = [];
   const cardsInDeck = 13;
   const baseTopDeckMargin = cardDim.oneHalfHeight / -2;
@@ -38,18 +43,23 @@ const cardDeck = (spread) => {
   return cards;
 };
 
-const Deck = ({ spread }) => (
-  <div>
-    {cardDeck(spread)}
+const Deck = ({ spread, showCard }) => (
+  <div
+    className={getCardContainerClass(spread)}
+    style={getCardContainerStyle(showCard)}
+  >
+    {getCardDeck(spread)}
   </div>
 );
 
 Deck.propTypes = {
-  spread: PropTypes.bool
+  spread: PropTypes.bool,
+  showCard: PropTypes.bool
 };
 
 Deck.defaultProps = {
-  spread: false
+  spread: false,
+  showCard: false
 };
 
 export default Deck;
