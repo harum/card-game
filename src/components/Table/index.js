@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-const Table = ({ handCards, deck }) => (
+const Table = ({ handCards, deck, playButton }) => (
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">
@@ -26,7 +26,9 @@ const Table = ({ handCards, deck }) => (
       </div>
     </div>
 
-    <div className="c-table__item" />
+    <div className="c-table__item">
+      {playButton}
+    </div>
     <div className="c-table__item">
       <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
         {handCards}
@@ -38,10 +40,12 @@ const Table = ({ handCards, deck }) => (
 
 Table.propTypes = {
   handCards: PropTypes.object.isRequired,
-  deck: PropTypes.object.isRequired
+  deck: PropTypes.object.isRequired,
+  playButton: PropTypes.object
 };
 
 Table.defaultProps = {
+  playButton: {}
 };
 
 export default Table;
