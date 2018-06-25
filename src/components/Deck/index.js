@@ -5,22 +5,23 @@ import Card from '../Card';
 import cardDim from '../../helpers/cardDimension';
 import './style.scss';
 
+const CARDS_IN_DECK = 13;
+const TOP_DECK_MRGN = cardDim.oneHalfHeight / -2;
+const LEFT_DECK_MRGN = cardDim.oneHalfWidth / -2;
+const BOTTOM = (window.innerHeight / 2) + TOP_DECK_MRGN;
+const LEFT_TRANSITION = cardDim.oneHalfWidth - (cardDim.oneHalfWidth - 30) - 1;
+
 const getCardContainerClass = spread => classNames({ 'c-deck-container--spread': spread });
 
 const getCardContainerStyle = showCard => ({ display: showCard ? 'none' : 'block' });
 
 const getCardDeck = (spread) => {
   const cards = [];
-  const cardsInDeck = 13;
-  const baseTopDeckMargin = cardDim.oneHalfHeight / -2;
-  const baseLeftDeckMargin = cardDim.oneHalfWidth / -2;
-  const bottomTable = (window.innerHeight / 2) + baseTopDeckMargin;
-  const baseLeftTrans = cardDim.oneHalfWidth - (cardDim.oneHalfWidth - 30) - 1;
 
-  for (let i = 1; i <= cardsInDeck; i += 1) {
+  for (let i = 1; i <= CARDS_IN_DECK; i += 1) {
     const leftTransIndex = i - 7;
     const styles = spread ?
-      { transform: `translate(${leftTransIndex * baseLeftTrans}px ,${bottomTable}px)` } : {};
+      { transform: `translate(${leftTransIndex * LEFT_TRANSITION}px ,${BOTTOM}px)` } : {};
 
     const el = (
       <div
@@ -28,8 +29,8 @@ const getCardDeck = (spread) => {
         className="c-deck"
         style={{
           ...styles,
-          marginTop: baseTopDeckMargin,
-          marginLeft: baseLeftDeckMargin - (cardsInDeck - i)
+          marginTop: TOP_DECK_MRGN,
+          marginLeft: LEFT_DECK_MRGN - (CARDS_IN_DECK - i)
         }}
       >
         <Card
