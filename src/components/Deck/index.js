@@ -11,7 +11,7 @@ const LEFT_DECK_MRGN = cardDim.oneHalfWidth / -2;
 const BOTTOM = (window.innerHeight / 2) + TOP_DECK_MRGN;
 const LEFT_TRANSITION = cardDim.oneHalfWidth - (cardDim.oneHalfWidth - 30) - 1;
 
-const getCardContainerClass = spread => classNames({ 'c-deck-container--spread': spread });
+const getCardContainerClass = spread => classNames('c-deck-container', { 'c-deck-container--spread': spread });
 
 const getCardContainerStyle = showCard => ({ display: showCard ? 'none' : 'block' });
 
