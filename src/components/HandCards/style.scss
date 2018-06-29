@@ -30,16 +30,12 @@
 
     &--overlay {
       background: $color-black;
+      filter: blur(2px);
       height: $card-height-one-half;
       margin-top: $card-height-one-half * -1;
-      opacity: 0.3;
+      opacity: .3;
       position: absolute;
       width: $card-width-one-half;
-      -webkit-filter: blur(2px);
-      -moz-filter: blur(2px);
-      -o-filter: blur(2px);
-      -ms-filter: blur(2px);
-      filter: blur(2px);
     }
   }
 }
