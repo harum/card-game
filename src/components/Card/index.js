@@ -8,6 +8,7 @@ import CardNumber from '../CardNumber';
 import './style.scss';
 
 const Card = ({
+  isDisabled,
   type,
   number,
   size
@@ -15,7 +16,8 @@ const Card = ({
   const containerClass = classNames(
     'c-card',
     `c-card--${cardColor.getColor(type)}`,
-    `c-card--${size}`
+    `c-card--${size}`,
+    { 'c-card--disabled': isDisabled }
   );
 
   const imageClass = classNames(
@@ -49,10 +51,12 @@ const Card = ({
 
 Card.propTypes = {
   ...propsHelper.cardBaseProps,
+  isDisabled: PropTypes.bool,
   size: PropTypes.string
 };
 
 Card.defaultProps = {
+  isDisabled: false,
   size: ''
 };
 

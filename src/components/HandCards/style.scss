@@ -17,9 +17,29 @@
       box-shadow: 0 0 20px 1px $color-black;
     }
 
+    &--disabled:hover,
+    &--disabled:active {
+      box-shadow: none;
+      cursor: default;
+    }
+
     &:not(:first-child) {
       // make cards stacked (but not fully stacked, still can see the card number)
       margin-left: -1 * $card-base-left-margin * $card-zoom;
+    }
+
+    &--overlay {
+      background: $color-black;
+      height: $card-height-one-half;
+      margin-top: $card-height-one-half * -1;
+      opacity: 0.3;
+      position: absolute;
+      width: $card-width-one-half;
+      -webkit-filter: blur(2px);
+      -moz-filter: blur(2px);
+      -o-filter: blur(2px);
+      -ms-filter: blur(2px);
+      filter: blur(2px);
     }
   }
 }

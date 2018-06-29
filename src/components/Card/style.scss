@@ -12,14 +12,6 @@
   justify-content: space-between;
   padding: .5em;
   width: $card-base-width * 1.5;
-
-  &:hover {
-    box-shadow: 0 0 20px 5px $color-grey;
-  }
-
-  &:active {
-    box-shadow: 0 0 20px 1px $color-grey;
-  }
 }
 
 .c-card {
@@ -63,5 +55,13 @@
 
   &__bottom {
     align-self: flex-end;
+  }
+
+  &--disabled {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
   }
 }
