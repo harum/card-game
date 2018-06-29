@@ -20,6 +20,11 @@ const Card = ({
     { 'c-card--disabled': isDisabled }
   );
 
+  const backContainerClass = classNames(
+    'c-card-back',
+    { 'c-card-back--disabled': isDisabled }
+  );
+
   const imageClass = classNames(
     'c-card__image',
     `c-card__image--${size}`
@@ -49,7 +54,7 @@ const Card = ({
           </div>
         </div>
       ) : (
-        <div className="c-card-back" />
+        <div className={backContainerClass} />
       )
       }
       {getDisableOverlay()}

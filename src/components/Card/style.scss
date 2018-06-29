@@ -12,6 +12,10 @@
   justify-content: space-between;
   padding: .5em;
   width: $card-base-width * 1.5;
+
+  &--disabled {
+    filter: blur(2px);
+  }
 }
 
 .c-card {
@@ -66,7 +70,7 @@
     filter: blur(2px);
     height: $card-height-one-half;
     margin-top: $card-height-one-half * -1;
-    opacity: .3;
+    opacity: .5;
     position: absolute;
     width: $card-width-one-half;
   }

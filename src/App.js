@@ -99,7 +99,7 @@ const cards = [
     number: 'K',
     eligible: false,
     picked: false,
-    isDisabled: true
+    isDisabled: false
   }
 ];
 
