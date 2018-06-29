@@ -100,6 +100,27 @@ class App extends Component {
     };
   }
 
+  getDeck = () => (
+    <Deck
+      spread={this.state.spread}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getHandCards = () => (
+    <HandCards
+      cards={cards}
+      showCard={this.state.showCard}
+      onCardClick={index => this.pickCard(index)}
+    />
+  )
+
+  getPlayButton = () => (
+    <button onClick={this.spreadCards}>
+      Spread Card!
+    </button>
+  )
+
   pickCard = (index) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
@@ -122,22 +143,9 @@ class App extends Component {
     return (
       <div>
         <Table
-          handCards={<HandCards
-            cards={cards}
-            showCard={this.state.showCard}
-            onCardClick={index => this.pickCard(index)}
-          />}
-          deck={
-            <Deck
-              spread={this.state.spread}
-              showCard={this.state.showCard}
-            />
-          }
-          playButton={
-            <button onClick={this.spreadCards}>
-              Spread Card!
-            </button>
-          }
+          deck={this.getDeck()}
+          handCards={this.getHandCards()}
+          playButton={this.getPlayButton()}
         />
       </div>
     );
