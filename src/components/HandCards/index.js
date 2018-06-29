@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Card from '../Card';
 import cardDim from '../../helpers/cardDimension';
 import './style.scss';
@@ -8,6 +9,11 @@ const getHandCardStyle = (numberOfCards, showCard) => ({
   width: `${(cardDim.space * (numberOfCards - 1)) + cardDim.oneHalfWidth}px`,
   display: showCard ? 'block' : 'none'
 });
+
+const getHandCardItemClass = isDisabled => (classNames(
+  'c-hand-cards__item',
+  { 'c-hand-cards__item--disabled': isDisabled }
+));
 
 const getCardStyle = (card, index) => ({
   zIndex: `${index}`,
@@ -23,14 +29,15 @@ const HandCards = ({ cards, showCard, onCardClick }) => (
       (
         <div
           style={getCardStyle(card, index)}
-          className="c-hand-cards__item"
+          className={getHandCardItemClass(card.isDisabled)}
           role="presentation"
           key={`${card.type}-${card.number}`}
-          onClick={() => onCardClick(index)}
+          onClick={() => (card.isDisabled ? false : onCardClick(index))}
         >
           <Card
             type={card.type}
             number={card.number}
+            isDisabled={card.isDisabled}
           />
         </div>
       ))

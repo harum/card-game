@@ -13,12 +13,8 @@
   padding: .5em;
   width: $card-base-width * 1.5;
 
-  &:hover {
-    box-shadow: 0 0 20px 5px $color-grey;
-  }
-
-  &:active {
-    box-shadow: 0 0 20px 1px $color-grey;
+  &--disabled {
+    filter: blur(2px);
   }
 }
 
@@ -63,5 +59,19 @@
 
   &__bottom {
     align-self: flex-end;
+  }
+
+  &--disabled {
+    filter: blur(2px);
+  }
+
+  &__overlay {
+    background: $color-black;
+    filter: blur(2px);
+    height: $card-height-one-half;
+    margin-top: $card-height-one-half * -1;
+    opacity: .5;
+    position: absolute;
+    width: $card-width-one-half;
   }
 }

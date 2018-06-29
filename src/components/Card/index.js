@@ -8,6 +8,7 @@ import CardNumber from '../CardNumber';
 import './style.scss';
 
 const Card = ({
+  isDisabled,
   type,
   number,
   size
@@ -15,13 +16,26 @@ const Card = ({
   const containerClass = classNames(
     'c-card',
     `c-card--${cardColor.getColor(type)}`,
-    `c-card--${size}`
+    `c-card--${size}`,
+    { 'c-card--disabled': isDisabled }
+  );
+
+  const backContainerClass = classNames(
+    'c-card-back',
+    { 'c-card-back--disabled': isDisabled }
   );
 
   const imageClass = classNames(
     'c-card__image',
     `c-card__image--${size}`
   );
+
+  const getDisableOverlay = () => {
+    if (isDisabled) {
+      return (<div className="c-card__overlay" />);
+    }
+    return '';
+  };
 
   return (
     <div>
@@ -40,19 +54,22 @@ const Card = ({
           </div>
         </div>
       ) : (
-        <div className="c-card-back" />
+        <div className={backContainerClass} />
       )
       }
+      {getDisableOverlay()}
     </div>
   );
 };
 
 Card.propTypes = {
   ...propsHelper.cardBaseProps,
+  isDisabled: PropTypes.bool,
   size: PropTypes.string
 };
 
 Card.defaultProps = {
+  isDisabled: false,
   size: ''
 };
 
