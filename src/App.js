@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
+import Deck from './components/Deck';
 
 
 const cards = [
@@ -93,9 +94,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards
+      cards,
+      spread: false,
+      showCard: false
     };
   }
+
+  getDeck = () => (
+    <Deck
+      spread={this.state.spread}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getHandCards = () => (
+    <HandCards
+      cards={cards}
+      showCard={this.state.showCard}
+      onCardClick={index => this.pickCard(index)}
+    />
+  )
+
+  getPlayButton = () => (
+    <button onClick={this.spreadCards}>
+      Spread Card!
+    </button>
+  )
 
   pickCard = (index) => {
     const tempCards = this.state.cards;
@@ -103,15 +127,26 @@ class App extends Component {
     this.setState({ cards: tempCards });
   }
 
+  spreadCards = () => {
+    this.setState({
+      spread: true
+    });
+    setTimeout(
+      () => this.setState({
+        showCard: true
+      }),
+      1200
+    );
+  }
+
   render() {
     return (
       <div>
-        <Table>
-          <HandCards
-            cards={cards}
-            onCardClick={index => this.pickCard(index)}
-          />
-        </Table>
+        <Table
+          deck={this.getDeck()}
+          handCards={this.getHandCards()}
+          playButton={this.getPlayButton()}
+        />
       </div>
     );
   }
