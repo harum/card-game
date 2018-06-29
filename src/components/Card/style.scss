@@ -60,4 +60,14 @@
   &--disabled {
     filter: blur(2px);
   }
+
+  &__overlay {
+    background: $color-black;
+    filter: blur(2px);
+    height: $card-height-one-half;
+    margin-top: $card-height-one-half * -1;
+    opacity: .3;
+    position: absolute;
+    width: $card-width-one-half;
+  }
 }

@@ -27,15 +27,5 @@
       // make cards stacked (but not fully stacked, still can see the card number)
       margin-left: -1 * $card-base-left-margin * $card-zoom;
     }
-
-    &--overlay {
-      background: $color-black;
-      filter: blur(2px);
-      height: $card-height-one-half;
-      margin-top: $card-height-one-half * -1;
-      opacity: .3;
-      position: absolute;
-      width: $card-width-one-half;
-    }
   }
 }

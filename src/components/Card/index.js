@@ -25,6 +25,13 @@ const Card = ({
     `c-card__image--${size}`
   );
 
+  const getDisableOverlay = () => {
+    if (isDisabled) {
+      return (<div className="c-card__overlay" />);
+    }
+    return '';
+  };
+
   return (
     <div>
       { number !== '' && type !== '' ? (
@@ -45,6 +52,7 @@ const Card = ({
         <div className="c-card-back" />
       )
       }
+      {getDisableOverlay()}
     </div>
   );
 };

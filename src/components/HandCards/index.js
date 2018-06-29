@@ -20,13 +20,6 @@ const getCardStyle = (card, index) => ({
   bottom: `${(card.picked ? cardDim.space : 0)}px`
 });
 
-const getDisableOverlay = (card) => {
-  if (card.isDisabled) {
-    return (<div className="c-hand-cards__item--overlay" />);
-  }
-  return '';
-};
-
 const HandCards = ({ cards, showCard, onCardClick }) => (
   <div
     className="c-hand-cards"
@@ -46,7 +39,6 @@ const HandCards = ({ cards, showCard, onCardClick }) => (
             number={card.number}
             isDisabled={card.isDisabled}
           />
-          {getDisableOverlay(card)}
         </div>
       ))
     }
