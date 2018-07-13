@@ -9,6 +9,7 @@ import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 
 
+const cardos = new Array(13).fill({});
 const cards = [
   {
     type: 'spade',
@@ -115,6 +116,14 @@ class App extends Component {
     />
   )
 
+  getEnemyCards = () => (
+    <HandCards
+      cards={cardos}
+      showCard={this.state.showCard}
+      onCardClick={index => this.pickCard(index)}
+    />
+  )
+
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
       Spread Card!
@@ -146,6 +155,9 @@ class App extends Component {
           deck={this.getDeck()}
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
+          enemy1Cards={this.getEnemyCards()}
+          enemy2Cards={this.getEnemyCards()}
+          enemy3Cards={this.getEnemyCards()}
         />
       </div>
     );

@@ -25,7 +25,7 @@ const Card = ({
 
   return (
     <div>
-      { number !== '' && type !== '' ? (
+      { number !== undefined && type !== undefined ? (
         <div className={containerClass}>
           <div className="c-card__top">
             <CardNumber type={type} number={number} />
