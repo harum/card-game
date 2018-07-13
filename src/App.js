@@ -9,7 +9,7 @@ import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 
 
-const cardos = new Array(13).fill({});
+const enemyCards = new Array(13).fill({});
 const cards = [
   {
     type: 'spade',
@@ -118,9 +118,8 @@ class App extends Component {
 
   getEnemyCards = () => (
     <HandCards
-      cards={cardos}
+      cards={enemyCards}
       showCard={this.state.showCard}
-      onCardClick={index => this.pickCard(index)}
     />
   )
 
