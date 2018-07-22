@@ -9,7 +9,9 @@ import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 
 
-const enemyCards = new Array(13).fill({});
+const enemy1Cards = new Array(13).fill({});
+const enemy2Cards = new Array(4).fill({});
+const enemy3Cards = new Array(8).fill({});
 const cards = [
   {
     type: 'spade',
@@ -116,13 +118,26 @@ class App extends Component {
     />
   )
 
-  getEnemyCards = () => (
+  getEnemy1Cards = () => (
     <HandCards
-      cards={enemyCards}
+      cards={enemy1Cards}
       showCard={this.state.showCard}
     />
   )
 
+  getEnemy2Cards = () => (
+    <HandCards
+      cards={enemy2Cards}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getEnemy3Cards = () => (
+    <HandCards
+      cards={enemy3Cards}
+      showCard={this.state.showCard}
+    />
+  )
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
       Spread Card!
@@ -154,9 +169,9 @@ class App extends Component {
           deck={this.getDeck()}
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
-          enemy1Cards={this.getEnemyCards()}
-          enemy2Cards={this.getEnemyCards()}
-          enemy3Cards={this.getEnemyCards()}
+          enemy1Cards={this.getEnemy1Cards()}
+          enemy2Cards={this.getEnemy2Cards()}
+          enemy3Cards={this.getEnemy3Cards()}
         />
       </div>
     );
