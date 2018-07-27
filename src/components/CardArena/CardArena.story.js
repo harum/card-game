@@ -3,10 +3,10 @@ import React from 'react';
 import Lib from '../../storybook_lib';
 
 import {
-  diamondCards,
-  clubCards,
-  heartCards,
-  spadeCards
+  cardSet1,
+  cardSet2,
+  cardSet3,
+  cardSet4
 } from '../../dummy/cardSets';
 
 // Import Element(s)
@@ -16,64 +16,11 @@ import CardArena from './index';
 const story = Lib.storiesOf('Card Arena', module);
 story.addDecorator(Lib.withKnobs);
 
-
-const cardSets1 = [
-  {
-    type: 'diamond',
-    cards: diamondCards
-  },
-  {
-    type: 'club',
-    cards: clubCards
-  },
-  {
-    type: 'heart',
-    cards: heartCards
-  },
-  {
-    type: 'spade',
-    cards: spadeCards
-  }
-];
-
-const cardSets2 = [
-  {
-    type: 'diamond',
-    cards: diamondCards
-  },
-  {
-    type: 'heart',
-    cards: heartCards
-  },
-  {
-    type: 'spade',
-    cards: spadeCards
-  }
-];
-
-const cardSets3 = [
-  {
-    type: 'diamond',
-    cards: diamondCards
-  },
-  {
-    type: 'heart',
-    cards: heartCards
-  }
-];
-
-const cardSets4 = [
-  {
-    type: 'heart',
-    cards: heartCards
-  }
-];
-
 const cardSetsOptions = {
-  opt1: cardSets1,
-  opt2: cardSets2,
-  opt3: cardSets3,
-  opt4: cardSets4
+  opt1: cardSet1,
+  opt2: cardSet2,
+  opt3: cardSet3,
+  opt4: cardSet4
 };
 
 const opts = {

@@ -130,30 +130,36 @@ const spadeCards = [
   }
 ];
 
-const cardSets = [
-  {
-    type: 'diamond',
-    cards: diamondCards
-  },
-  {
-    type: 'club',
-    cards: clubCards
-  },
-  {
-    type: 'heart',
-    cards: heartCards
-  },
-  {
-    type: 'spade',
-    cards: spadeCards
-  }
-];
-
-export {
-  diamondCards,
-  clubCards,
-  heartCards,
-  spadeCards
+const diamondSet = {
+  type: 'diamond',
+  cards: diamondCards
 };
 
-export default cardSets;
+const clubSet = {
+  type: 'club',
+  cards: clubCards
+};
+
+const heartSet = {
+  type: 'heart',
+  cards: heartCards
+};
+
+const spadeSet = {
+  type: 'spade',
+  cards: spadeCards
+};
+
+const cardSet1 = [diamondSet];
+const cardSet2 = cardSet1.concat(clubSet);
+const cardSet3 = cardSet2.concat(heartSet);
+const cardSet4 = cardSet3.concat(spadeSet);
+
+export {
+  cardSet1,
+  cardSet2,
+  cardSet3,
+  cardSet4
+};
+
+export default cardSet4;
