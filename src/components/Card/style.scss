@@ -5,7 +5,7 @@
   background-image: url('../../assets/images/backPattern.svg');
   background-repeat: repeat;
   border-radius: 2px;
-  box-shadow: -1px 1px 1px 1px $shodow-grey;
+  box-shadow: -1px 1px 1px 1px $shadow-grey;
   display: flex;
   flex-direction: column;
   height: $card-base-height * 1.5;
@@ -14,11 +14,11 @@
   width: $card-base-width * 1.5;
 
   &:hover {
-    box-shadow: 0 0 20px 5px $shodow-grey;
+    box-shadow: 0 0 20px 5px $shadow-grey;
   }
 
   &:active {
-    box-shadow: 0 0 20px 1px $shodow-grey;
+    box-shadow: 0 0 20px 1px $shadow-grey;
   }
 }
 
@@ -26,7 +26,7 @@
   align-items: center;
   background: $color-white;
   border-radius: 2px;
-  box-shadow: -1px 1px 1px 1px $shodow-grey;
+  box-shadow: -1px 1px 1px 1px $shadow-grey;
   color: $color-black;
   display: flex;
   flex-direction: column;
