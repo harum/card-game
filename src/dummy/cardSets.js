@@ -155,6 +155,8 @@ const cardSet2 = cardSet1.concat(clubSet);
 const cardSet3 = cardSet2.concat(heartSet);
 const cardSet4 = cardSet3.concat(spadeSet);
 
+const cardSets = cardSet4;
+
 export {
   cardSet1,
   cardSet2,
@@ -162,4 +164,4 @@ export {
   cardSet4
 };
 
-export default cardSet4;
+export default cardSets;
