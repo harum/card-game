@@ -1,7 +1,7 @@
 const diamondCards = [
   {
     type: 'diamond',
-    number: '1'
+    number: 'A'
   },
   {
     type: 'diamond',
