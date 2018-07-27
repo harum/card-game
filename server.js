@@ -5,17 +5,23 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
 const http = require('http').Server(app);
-// const io = require('socket.io')(http);
+const io = require('socket.io')(http);
 
+const cardRandomizer = require('./src/helpers/cardRandomizer');
+
+/* eslint-disable no-console */
 app.get('/ping', (req, res) =>
   res.send('pong'));
 
-// io.on('connection', (socket) => {
-// // console.log('a user connected');
-//   socket.on('disconnect', () => {
-//   // console.log('user disconnected');
-// });
-// });
+io.on('connection', (socket) => {
+  console.log('a user connected');
+
+  socket.emit('cards', cardRandomizer().slice(0, 12));
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
