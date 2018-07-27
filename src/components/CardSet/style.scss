@@ -1,0 +1,17 @@
+@import '../../assets/stylesheets/mixins/settings.global';
+
+.c-card-set {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    bottom: 0;
+    display: inline-block;
+    position: relative;
+
+    &:not(:first-child) {
+      // make cards stacked (but not fully stacked, still can see the card number)
+      margin-left: -1 * $card-base-left-margin * 1;
+    }
+  }
+}
