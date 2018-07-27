@@ -149,4 +149,11 @@ const cardSets = [
   }
 ];
 
+export {
+  diamondCards,
+  clubCards,
+  heartCards,
+  spadeCards
+};
+
 export default cardSets;

@@ -91,8 +91,4 @@ const cards = [
   }
 ];
 
-story.add('Card Set', () => {
-  return (
-    <CardSet cards={cards} />
-  );
-});
+story.add('Card Set', () => <CardSet cards={cards} />);
