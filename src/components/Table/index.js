@@ -48,7 +48,7 @@ Table.propTypes = {
   handCards: PropTypes.object.isRequired,
   deck: PropTypes.object.isRequired,
   playButton: PropTypes.object,
-  cardSets: PropTypes.arrayOf(PropTypes.object)
+  cardSets: PropTypes.object
 };
 
 Table.defaultProps = {

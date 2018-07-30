@@ -9,7 +9,10 @@ const CardArena = ({ cardSets }) => (
   >
     {
       cardSets.map(cardSet => (
-        <div className="c-card-arena__section">
+        <div
+          className="c-card-arena__section"
+          key={cardSet.type}
+        >
           <div className="c-card-arena__cards">
             <CardSet
               cards={cardSet.cards}
