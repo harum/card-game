@@ -8,6 +8,7 @@ import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
 import cardSets from './dummy/cardSets';
+import playableCards from './helpers/playableCards';
 
 const socket = io('http://localhost:8080');
 
@@ -69,7 +70,7 @@ class App extends Component {
   render() {
     socket.on('cards', (data) => {
       this.setState({
-        cards: data
+        cards: playableCards(data, cardSets)
       });
     });
 

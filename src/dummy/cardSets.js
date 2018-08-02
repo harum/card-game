@@ -1,18 +1,6 @@
 const diamondCards = [
   {
     type: 'diamond',
-    number: 'A'
-  },
-  {
-    type: 'diamond',
-    number: '2'
-  },
-  {
-    type: 'diamond',
-    number: '3'
-  },
-  {
-    type: 'diamond',
     number: '4'
   },
   {
@@ -54,22 +42,7 @@ const diamondCards = [
 ];
 
 const clubCards = [
-  {
-    type: 'club',
-    number: '7'
-  },
-  {
-    type: 'club',
-    number: '8'
-  },
-  {
-    type: 'club',
-    number: '9'
-  },
-  {
-    type: 'club',
-    number: '10'
-  }
+
 ];
 
 const heartCards = [
@@ -80,22 +53,6 @@ const heartCards = [
   {
     type: 'heart',
     number: '7'
-  },
-  {
-    type: 'heart',
-    number: '8'
-  },
-  {
-    type: 'heart',
-    number: '9'
-  },
-  {
-    type: 'heart',
-    number: '10'
-  },
-  {
-    type: 'heart',
-    number: 'J'
   }
 ];
 
@@ -119,14 +76,6 @@ const spadeCards = [
   {
     type: 'spade',
     number: 'J'
-  },
-  {
-    type: 'spade',
-    number: 'Q'
-  },
-  {
-    type: 'spade',
-    number: 'K'
   }
 ];
 

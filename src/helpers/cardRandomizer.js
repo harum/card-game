@@ -10,7 +10,7 @@ const getAllCards = () => {
       const card = {
         type: suits[j],
         number: values[i],
-        eligible: true,
+        eligible: false,
         picked: false
       };
       deck.push(card);
