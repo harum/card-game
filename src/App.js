@@ -6,6 +6,8 @@ import React, { Component } from 'react';
 import Table from './components/Table';
 import HandCards from './components/HandCards';
 import Deck from './components/Deck';
+import CardArena from './components/CardArena';
+import cardSets from './dummy/cardSets';
 
 const socket = io('http://localhost:8080');
 
@@ -40,6 +42,12 @@ class App extends Component {
     </button>
   )
 
+  getCardSets = () => (
+    <CardArena
+      cardSets={cardSets}
+    />
+  )
+
   pickCard = (index) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
@@ -71,6 +79,7 @@ class App extends Component {
           deck={this.getDeck()}
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
+          cardSets={this.getCardSets()}
         />
       </div>
     );
