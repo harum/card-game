@@ -18,8 +18,8 @@ const getEdgeCards = (onArenaCards) => {
   const edgeOfEachSet = [];
   onArenaCards.map(({ type, cards }) => {
     edgeOfEachSet[type] = {
-      first: cards.length > 0 ? toNumber(cards[0].number) : 0,
-      last: cards.length > 0 ? toNumber(cards[cards.length - 1].number) : 14
+      leftEdge: cards.length > 0 ? toNumber(cards[0].number) : 0,
+      rightEdge: cards.length > 0 ? toNumber(cards[cards.length - 1].number) : 14
     };
     return true;
   });
@@ -32,9 +32,9 @@ const isEligible = (currentCard, edgeCards) => {
   if (cardValue === 7) {
     return true;
   } else if (cardValue < 7) {
-    return cardValue + 1 === edgeCards[currentCard.type].first;
+    return cardValue + 1 === edgeCards[currentCard.type].leftEdge;
   } else if (cardValue > 7) {
-    return cardValue - 1 === edgeCards[currentCard.type].last;
+    return cardValue - 1 === edgeCards[currentCard.type].rightEdge;
   }
   return false;
 };
