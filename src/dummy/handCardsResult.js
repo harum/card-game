@@ -1,4 +1,4 @@
-const resultOne = [
+const resultFull = [
   {
     type: 'spade', number: 'A', eligible: false, picked: false
   }, {
@@ -26,4 +26,16 @@ const resultOne = [
   }
 ];
 
-export default resultOne;
+const resultOnlySeven = [
+  {
+    type: 'spade', number: '7', eligible: true, picked: false
+  },
+  {
+    type: 'heart', number: '7', eligible: true, picked: false
+  },
+  {
+    type: 'club', number: '7', eligible: true, picked: false
+  }
+];
+
+export { resultFull, resultOnlySeven };

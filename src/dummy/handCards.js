@@ -16,6 +16,12 @@ const fiveSpade = {
   eligible: false,
   picked: false
 };
+const sevenSpade = {
+  type: 'spade',
+  number: '7',
+  eligible: false,
+  picked: false
+};
 const kingSpade = {
   type: 'spade',
   number: 'K',
@@ -24,6 +30,12 @@ const kingSpade = {
 };
 
 
+const sevenHeart = {
+  type: 'heart',
+  number: '7',
+  eligible: false,
+  picked: false
+};
 const tenHeart = {
   type: 'heart',
   number: '10',
@@ -78,7 +90,7 @@ const threeDiamond = {
 };
 
 
-const handCardsDummy = [
+const handCardsDummyFull = [
   aceSpade,
   fourSpade,
   fiveSpade,
@@ -93,8 +105,15 @@ const handCardsDummy = [
   threeDiamond
 ];
 
-export default handCardsDummy;
+const handCardsDummySeven = [
+  sevenSpade,
+  sevenHeart,
+  sevenClub
+];
+
 export {
+  handCardsDummyFull,
+  handCardsDummySeven,
   aceSpade,
   fourSpade,
   fiveSpade,

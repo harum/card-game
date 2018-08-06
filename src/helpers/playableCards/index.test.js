@@ -1,4 +1,6 @@
-import handCardsDummy, {
+import {
+  handCardsDummyFull,
+  handCardsDummySeven,
   aceDiamond,
   threeDiamond,
   sevenClub,
@@ -6,8 +8,13 @@ import handCardsDummy, {
   fourSpade,
   kingSpade
 } from '../../dummy/handCards';
-import handCardsDummyResult from '../../dummy/handCardsResult';
-import cardSets from '../../dummy/cardSets';
+import {
+  resultFull,
+  resultOnlySeven
+} from '../../dummy/handCardsResult';
+import cardSets, {
+  emptyCardSet
+} from '../../dummy/cardSets';
 
 import playableCards from './index';
 
@@ -44,7 +51,11 @@ describe('Playable Card Function', () => {
     checkSingleCardToBe(aceSpade, false);
   });
 
+  it('returns true for only seven cards', () => {
+    expect(playableCards(handCardsDummySeven, emptyCardSet)).toMatchObject(resultOnlySeven);
+  });
+
   it('returns full set of playable hand cards', () => {
-    expect(playableCards(handCardsDummy, cardSets)).toMatchObject(handCardsDummyResult);
+    expect(playableCards(handCardsDummyFull, cardSets)).toMatchObject(resultFull);
   });
 });
