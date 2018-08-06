@@ -94,3 +94,17 @@ const handCardsDummy = [
 ];
 
 export default handCardsDummy;
+export {
+  aceSpade,
+  fourSpade,
+  fiveSpade,
+  kingSpade,
+  tenHeart,
+  jackHeart,
+  twoClub,
+  threeClub,
+  sevenClub,
+  eightClub,
+  aceDiamond,
+  threeDiamond
+};
