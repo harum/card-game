@@ -29,12 +29,15 @@ const getEdgeCards = (onArenaCards) => {
 
 const isEligible = (currentCard, edgeCards) => {
   const cardValue = toNumber(currentCard.number);
+  const { leftEdge, rightEdge } = edgeCards[currentCard.type];
   if (cardValue === 7) {
     return true;
+  } else if (cardValue === 1) {
+    return leftEdge === 2 || rightEdge === 13;
   } else if (cardValue < 7) {
-    return cardValue + 1 === edgeCards[currentCard.type].leftEdge;
+    return cardValue + 1 === leftEdge;
   } else if (cardValue > 7) {
-    return cardValue - 1 === edgeCards[currentCard.type].rightEdge;
+    return cardValue - 1 === rightEdge;
   }
   return false;
 };

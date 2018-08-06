@@ -20,7 +20,7 @@ const resultOne = [
   }, {
     type: 'club', number: '8', eligible: false, picked: false
   }, {
-    type: 'diamond', number: 'A', eligible: false, picked: false
+    type: 'diamond', number: 'A', eligible: true, picked: false
   }, {
     type: 'diamond', number: '3', eligible: true, picked: false
   }
