@@ -76,6 +76,10 @@ const spadeCards = [
   {
     type: 'spade',
     number: 'J'
+  },
+  {
+    type: 'spade',
+    number: 'Q'
   }
 ];
 
