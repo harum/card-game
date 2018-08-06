@@ -11,33 +11,37 @@ import cardSets from '../../dummy/cardSets';
 
 import playableCards from './index';
 
+const checkSingleCardToBe = (card, expected) => {
+  expect(playableCards([card], cardSets)[0].eligible).toBe(expected);
+};
+
 describe('Playable Card Function', () => {
   it('returns empty array if there is no hand cards', () => {
     expect(playableCards([], cardSets).length).toEqual(0);
   });
 
   it('returns false if card is not eligible', () => {
-    expect(playableCards([fourSpade], cardSets)[0].eligible).toBe(false);
+    checkSingleCardToBe(fourSpade, false);
   });
 
   it('returns true for left edge checking', () => {
-    expect(playableCards([threeDiamond], cardSets)[0].eligible).toBe(true);
+    checkSingleCardToBe(threeDiamond, true);
   });
 
   it('returns true for right edge checking', () => {
-    expect(playableCards([kingSpade], cardSets)[0].eligible).toBe(true);
+    checkSingleCardToBe(kingSpade, true);
   });
 
   it('returns true for seven card', () => {
-    expect(playableCards([sevenClub], cardSets)[0].eligible).toBe(true);
+    checkSingleCardToBe(sevenClub, true);
   });
 
   it('returns true for right edge Ace', () => {
-    expect(playableCards([aceDiamond], cardSets)[0].eligible).toBe(true);
+    checkSingleCardToBe(aceDiamond, true);
   });
 
   it('returns false for left edge Ace', () => {
-    expect(playableCards([aceSpade], cardSets)[0].eligible).toBe(false);
+    checkSingleCardToBe(aceSpade, false);
   });
 
   it('returns full set of playable hand cards', () => {
