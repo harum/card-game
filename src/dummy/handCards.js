@@ -111,8 +111,8 @@ const handCardsDummySeven = [
   sevenClub
 ];
 
+export default handCardsDummyFull;
 export {
-  handCardsDummyFull,
   handCardsDummySeven,
   aceSpade,
   fourSpade,

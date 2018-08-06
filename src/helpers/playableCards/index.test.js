@@ -1,5 +1,4 @@
-import {
-  handCardsDummyFull,
+import handCardsDummyFull, {
   handCardsDummySeven,
   aceDiamond,
   threeDiamond,
