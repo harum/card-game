@@ -10,6 +10,8 @@ const infoOptions = {
   inline: true
 };
 
+const info = () => withInfo(infoOptions);
+
 const StoryBook = {
   storiesOf,
   action,
@@ -21,8 +23,7 @@ const StoryBook = {
   boolean,
   array,
   select,
-  withInfo,
-  infoOptions
+  info
 };
 
 export default StoryBook;

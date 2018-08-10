@@ -33,7 +33,7 @@ const opts = {
 const getSets = opt =>
   cardSetsOptions[opt];
 
-story.add('Card Arena', Lib.withInfo(Lib.infoOptions)(() => {
+story.add('Card Arena', Lib.info()(() => {
   const opt = Lib.select('cardSets', opts, 'opt1');
 
   return (

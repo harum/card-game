@@ -37,7 +37,7 @@ const typeOptions = {
   diamond: 'diamond'
 };
 
-story.add('Default Card', Lib.withInfo(Lib.infoOptions)(() => {
+story.add('Default Card', Lib.info()(() => {
   const num = Lib.select('number', numOptions, 'A');
   const type = Lib.select('type', typeOptions, 'spade');
   const size = Lib.select('size', sizeOptions, 'normal');
