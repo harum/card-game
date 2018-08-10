@@ -1,18 +1,6 @@
 const diamondCards = [
   {
     type: 'diamond',
-    number: 'A'
-  },
-  {
-    type: 'diamond',
-    number: '2'
-  },
-  {
-    type: 'diamond',
-    number: '3'
-  },
-  {
-    type: 'diamond',
     number: '4'
   },
   {
@@ -54,22 +42,7 @@ const diamondCards = [
 ];
 
 const clubCards = [
-  {
-    type: 'club',
-    number: '7'
-  },
-  {
-    type: 'club',
-    number: '8'
-  },
-  {
-    type: 'club',
-    number: '9'
-  },
-  {
-    type: 'club',
-    number: '10'
-  }
+
 ];
 
 const heartCards = [
@@ -80,22 +53,6 @@ const heartCards = [
   {
     type: 'heart',
     number: '7'
-  },
-  {
-    type: 'heart',
-    number: '8'
-  },
-  {
-    type: 'heart',
-    number: '9'
-  },
-  {
-    type: 'heart',
-    number: '10'
-  },
-  {
-    type: 'heart',
-    number: 'J'
   }
 ];
 
@@ -123,10 +80,6 @@ const spadeCards = [
   {
     type: 'spade',
     number: 'Q'
-  },
-  {
-    type: 'spade',
-    number: 'K'
   }
 ];
 
@@ -150,6 +103,25 @@ const spadeSet = {
   cards: spadeCards
 };
 
+const emptyCardSet = [
+  {
+    type: 'diamond',
+    cards: []
+  },
+  {
+    type: 'club',
+    cards: []
+  },
+  {
+    type: 'heart',
+    cards: []
+  },
+  {
+    type: 'spade',
+    cards: []
+  }
+];
+
 const cardSet1 = [diamondSet];
 const cardSet2 = cardSet1.concat(clubSet);
 const cardSet3 = cardSet2.concat(heartSet);
@@ -161,7 +133,8 @@ export {
   cardSet1,
   cardSet2,
   cardSet3,
-  cardSet4
+  cardSet4,
+  emptyCardSet
 };
 
 export default cardSets;
