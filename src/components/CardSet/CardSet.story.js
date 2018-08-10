@@ -10,4 +10,4 @@ import cardSets from '../../dummy/cardSets';
 const story = Lib.storiesOf('Card Set', module);
 story.addDecorator(Lib.withKnobs);
 
-story.add('Card Set', () => <CardSet cards={cardSets[0].cards} />);
+story.add('Card Set', Lib.info()(() => <CardSet cards={cardSets[0].cards} />));
