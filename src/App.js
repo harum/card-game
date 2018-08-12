@@ -40,7 +40,21 @@ class App extends Component {
     />
   )
 
-  getEnemyCards = () => (
+  getEnemy1Cards = () => (
+    <HandCards
+      cards={this.state.enemyCards}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getEnemy2Cards = () => (
+    <HandCards
+      cards={this.state.enemyCards}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getEnemy3Cards = () => (
     <HandCards
       cards={this.state.enemyCards}
       showCard={this.state.showCard}
@@ -91,9 +105,9 @@ class App extends Component {
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
           cardSets={this.getCardSets()}
-          enemy1Cards={this.getEnemyCards()}
-          enemy2Cards={this.getEnemyCards()}
-          enemy3Cards={this.getEnemyCards()}
+          enemy1Cards={this.getEnemy1Cards()}
+          enemy2Cards={this.getEnemy2Cards()}
+          enemy3Cards={this.getEnemy3Cards()}
         />
       </div>
     );
