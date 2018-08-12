@@ -1,0 +1,14 @@
+@import '../../assets/stylesheets/mixins/settings.global';
+
+.c-card-arena {
+  display: block;
+
+  &__section {
+    display: inline-block;
+    width: 50%;
+  }
+
+  &__cards {
+    padding: $spacing-small;
+  }
+}
