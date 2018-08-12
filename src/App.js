@@ -9,6 +9,7 @@ import Deck from './components/Deck';
 import CardArena from './components/CardArena';
 import cardSets from './dummy/cardSets';
 import handCardsDummy from './dummy/handCards';
+import enemyHandCards from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
 
 // const socket = io('http://localhost:8080');
@@ -18,6 +19,7 @@ class App extends Component {
     super(props);
     this.state = {
       cards: playableCards(handCardsDummy, cardSets),
+      enemyCards: enemyHandCards,
       spread: false,
       showCard: false
     };
@@ -35,6 +37,27 @@ class App extends Component {
       cards={this.state.cards}
       showCard={this.state.showCard}
       onCardClick={index => this.pickCard(index)}
+    />
+  )
+
+  getEnemy1Cards = () => (
+    <HandCards
+      cards={this.state.enemyCards}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getEnemy2Cards = () => (
+    <HandCards
+      cards={this.state.enemyCards}
+      showCard={this.state.showCard}
+    />
+  )
+
+  getEnemy3Cards = () => (
+    <HandCards
+      cards={this.state.enemyCards}
+      showCard={this.state.showCard}
     />
   )
 
@@ -82,6 +105,9 @@ class App extends Component {
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
           cardSets={this.getCardSets()}
+          enemy1Cards={this.getEnemy1Cards()}
+          enemy2Cards={this.getEnemy2Cards()}
+          enemy3Cards={this.getEnemy3Cards()}
         />
       </div>
     );
