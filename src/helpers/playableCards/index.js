@@ -1,17 +1,5 @@
 import cardNumberToInt from '../cardNumber/cardNumberToInt';
-
-const getEdgeCards = (onArenaCards) => {
-  const edgeOfEachSet = [];
-  onArenaCards.map(({ type, cards }) => {
-    edgeOfEachSet[type] = {
-      leftEdge: cards.length > 0 ? cardNumberToInt(cards[0].number) : 0,
-      rightEdge: cards.length > 0 ? cardNumberToInt(cards[cards.length - 1].number) : 14
-    };
-    return true;
-  });
-  return edgeOfEachSet;
-};
-
+import getEdges from '../cardSet/getEdges';
 
 const isEligible = (currentCard, edgeCards) => {
   let result = false;
@@ -36,7 +24,7 @@ const getPlayabeCards = (onHandCards, onArenaCards) => {
     return [];
   }
 
-  const edgeCards = getEdgeCards(onArenaCards);
+  const edgeCards = getEdges(onArenaCards);
   const newHandCards = onHandCards.map(currentCard => ({
     type: currentCard.type,
     number: currentCard.number,
