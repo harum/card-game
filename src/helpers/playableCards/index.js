@@ -1,23 +1,5 @@
-import cardNumberToInt from '../cardNumber/cardNumberToInt';
 import getEdges from '../cardSet/getEdges';
-
-const isEligible = (currentCard, edgeCards) => {
-  let result = false;
-  const cardValue = cardNumberToInt(currentCard.number);
-  const { leftEdge, rightEdge } = edgeCards[currentCard.type];
-
-  if (cardValue === 7) {
-    result = true;
-  } else if (cardValue === 1) {
-    result = leftEdge === 2 || rightEdge === 13;
-  } else if (cardValue < 7) {
-    result = cardValue + 1 === leftEdge;
-  } else if (cardValue > 7) {
-    result = cardValue - 1 === rightEdge;
-  }
-  return result;
-};
-
+import isEligible from '../cardSet/isEligible';
 
 const getPlayabeCards = (onHandCards, onArenaCards) => {
   if (onHandCards.length === 0) {
