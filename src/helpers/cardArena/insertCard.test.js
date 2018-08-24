@@ -12,6 +12,11 @@ const newHeart = {
   number: '5'
 };
 
+const uneligibleNewHeart = {
+  type: 'heart',
+  number: '2'
+};
+
 const cardSet2 = [
   {
     type: 'diamond',
@@ -59,7 +64,7 @@ describe('Insert Card', () => {
   });
 
   it('Insert other card', () => {
-    expect(insertCard(newHeart, cardSet2)).toEqual([
+    expect(insertCard(newHeart, cardSet2.slice())).toEqual([
       {
         type: 'diamond',
         cards: []
@@ -75,6 +80,36 @@ describe('Insert Card', () => {
             type: 'heart',
             number: '5'
           },
+          {
+            type: 'heart',
+            number: '6'
+          },
+          {
+            type: 'heart',
+            number: '7'
+          }
+        ]
+      },
+      {
+        type: 'spade',
+        cards: []
+      }
+    ]);
+  });
+
+  it('Failed insert other card', () => {
+    expect(insertCard(uneligibleNewHeart, cardSet2.slice())).toEqual([
+      {
+        type: 'diamond',
+        cards: []
+      },
+      {
+        type: 'club',
+        cards: []
+      },
+      {
+        type: 'heart',
+        cards: [
           {
             type: 'heart',
             number: '6'
