@@ -75,7 +75,7 @@ class App extends Component {
     //     cards: playableCards(data, cardSets)
     //   });
     // });
-    console.log('tes', this.state.cards);
+    // console.log('tes', this.state.cards);
     return (
       <div>
         <Table

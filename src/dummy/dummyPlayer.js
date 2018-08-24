@@ -15,8 +15,7 @@ const fullPlayer = [
   player1,
   player2,
   player3,
-  player4,
-
+  player4
 ];
 
 export default fullPlayer;
