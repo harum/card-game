@@ -8,8 +8,9 @@ import HandCards from './components/HandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
 import cardSets from './dummy/cardSets';
-import handCardsDummy from './dummy/handCards';
+import fullCards from './dummy/handCards';
 import playableCards from './helpers/playableCards';
+import shuffleDeck from './helpers/shuffleDeck';
 
 // const socket = io('http://localhost:8080');
 
@@ -17,7 +18,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: playableCards(handCardsDummy, cardSets),
+      cards: playableCards(shuffleDeck(fullCards), cardSets),
       spread: false,
       showCard: false
     };
@@ -74,7 +75,7 @@ class App extends Component {
     //     cards: playableCards(data, cardSets)
     //   });
     // });
-
+    console.log('tes', this.state.cards);
     return (
       <div>
         <Table
