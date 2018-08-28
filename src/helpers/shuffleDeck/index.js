@@ -8,7 +8,7 @@ const shuffleDeck = (array) => {
     arrayTemp[i] = arrayTemp[j];
     arrayTemp[j] = valueTemp;
   }
-  return arrayTemp;
+  return arrayTemp.slice(0, 13);
 };
 
 export default shuffleDeck;
