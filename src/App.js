@@ -5,11 +5,12 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
+import EnemyHandCards from './components/EnemyHandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
 import cardSets from './dummy/cardSets';
 import handCardsDummy from './dummy/handCards';
-import enemyHandCards from './dummy/enemyHandCards';
+import enemyHandCardsDummy from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
 
 // const socket = io('http://localhost:8080');
@@ -19,7 +20,7 @@ class App extends Component {
     super(props);
     this.state = {
       cards: playableCards(handCardsDummy, cardSets),
-      enemyCards: enemyHandCards,
+      enemyCards: enemyHandCardsDummy,
       spread: false,
       showCard: false
     };
@@ -41,22 +42,22 @@ class App extends Component {
   )
 
   getEnemy1Cards = () => (
-    <HandCards
-      cards={this.state.enemyCards}
+    <EnemyHandCards
+      cards={this.state.enemyCards.slice(0, 13)}
       showCard={this.state.showCard}
     />
   )
 
   getEnemy2Cards = () => (
-    <HandCards
-      cards={this.state.enemyCards}
+    <EnemyHandCards
+      cards={this.state.enemyCards.slice(13, 26)}
       showCard={this.state.showCard}
     />
   )
 
   getEnemy3Cards = () => (
-    <HandCards
-      cards={this.state.enemyCards}
+    <EnemyHandCards
+      cards={this.state.enemyCards.slice(26, 39)}
       showCard={this.state.showCard}
     />
   )
@@ -92,6 +93,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.getHandCards());
     // socket.on('cards', (data) => {
     //   this.setState({
     //     cards: playableCards(data, cardSets)
