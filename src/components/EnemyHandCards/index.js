@@ -14,7 +14,7 @@ const getCardStyle = (card, index) => ({
   bottom: `${(card.picked ? cardDim.space : 0)}px`
 });
 
-const enemyHandCards = ({ cards, showCard, onCardClick }) => (
+const EnemyHandCards = ({ cards, showCard }) => (
   <div
     className="c-hand-cards"
     style={getEnemyHandCardstyle(cards.length, showCard)}
@@ -26,7 +26,6 @@ const enemyHandCards = ({ cards, showCard, onCardClick }) => (
           className="c-hand-cards__item"
           role="presentation"
           key={`${card.type}-${card.number}`}
-          onClick={() => onCardClick(index)}
         >
           <Card
             type={card.type}
@@ -38,16 +37,14 @@ const enemyHandCards = ({ cards, showCard, onCardClick }) => (
   </div>
 );
 
-enemyHandCards.propTypes = {
+EnemyHandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
   showCard: PropTypes.bool,
-  onCardClick: PropTypes.func
 };
 
-enemyHandCards.defaultProps = {
+EnemyHandCards.defaultProps = {
   cards: [],
   showCard: false,
-  onCardClick: () => {}
 };
 
-export default enemyHandCards;
+export default EnemyHandCards;
