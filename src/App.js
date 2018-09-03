@@ -93,7 +93,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.getHandCards());
+    // console.log(this.getHandCards());
     // socket.on('cards', (data) => {
     //   this.setState({
     //     cards: playableCards(data, cardSets)
