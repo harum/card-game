@@ -8,6 +8,7 @@ import './style.scss';
 
 const EnemyHandCards = ({ cards, showCard }) => (
   <div
+    key=""
     className="c-hand-cards"
     style={getHandCardStyle(cards.length, showCard)}
   >
