@@ -17,12 +17,9 @@ const EnemyHandCards = ({ cards, showCard }) => (
           style={getCardStyle(card, index)}
           className="c-hand-cards__item"
           role="presentation"
-          key={`${card.type}-${card.number}`}
+          key={`enemyCard-${index + 1}`}
         >
-          <Card
-            type={card.type}
-            number={card.number}
-          />
+          <Card />
         </div>
       ))
     }

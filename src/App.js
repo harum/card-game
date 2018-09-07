@@ -41,26 +41,29 @@ class App extends Component {
     />
   )
 
-  getEnemy1Cards = () => (
-    <EnemyHandCards
-      cards={this.state.enemyCards.slice(0, 13)}
-      showCard={this.state.showCard}
-    />
-  )
-
-  getEnemy2Cards = () => (
-    <EnemyHandCards
-      cards={this.state.enemyCards.slice(13, 26)}
-      showCard={this.state.showCard}
-    />
-  )
-
-  getEnemy3Cards = () => (
-    <EnemyHandCards
-      cards={this.state.enemyCards.slice(26, 39)}
-      showCard={this.state.showCard}
-    />
-  )
+  getEnemyCards = () => {
+    const a = (
+      <EnemyHandCards
+        cards={this.state.enemyCards.slice(0, 13)}
+        showCard={this.state.showCard}
+      />
+    );
+    const b = (
+      <EnemyHandCards
+        cards={this.state.enemyCards.slice(13, 26)}
+        showCard={this.state.showCard}
+      />
+    );
+    const c = (
+      <EnemyHandCards
+        cards={this.state.enemyCards.slice(26, 39)}
+        showCard={this.state.showCard}
+      />
+    );
+    return (
+      [a, b, c]
+    );
+  };
 
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
@@ -107,9 +110,9 @@ class App extends Component {
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
           cardSets={this.getCardSets()}
-          enemy1Cards={this.getEnemy1Cards()}
-          enemy2Cards={this.getEnemy2Cards()}
-          enemy3Cards={this.getEnemy3Cards()}
+          enemy1Cards={this.getEnemyCards()[0]}
+          enemy2Cards={this.getEnemyCards()[1]}
+          enemy3Cards={this.getEnemyCards()[2]}
         />
       </div>
     );

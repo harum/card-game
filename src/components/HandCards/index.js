@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
-// import cardDim from '../../helpers/cardDimension';
 import getCardStyle from '../../helpers/cardStyle';
 import getHandCardStyle from '../../helpers/handCardStyle';
 import './style.scss';
