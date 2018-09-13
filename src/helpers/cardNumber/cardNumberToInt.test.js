@@ -8,6 +8,6 @@ describe('Card number to integer', () => {
     expect(cardNumberToInt('A')).toEqual(1);
   });
   it('Card number K to int 13', () => {
-    expect(cardNumberToInt('A')).toEqual(1);
+    expect(cardNumberToInt('K')).toEqual(13);
   });
 });

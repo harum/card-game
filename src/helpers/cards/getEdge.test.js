@@ -5,23 +5,18 @@ import {
   heartCards
 } from '../../dummy/cards';
 
+const checkGetEdgeEqual = (cardSets, expected) => {
+  expect(getEdge(cardSets)).toEqual(expected);
+};
+
 describe('Get edge cards', () => {
   it('Get suitable edge', () => {
-    expect(getEdge(diamondCards)).toEqual({
-      leftEdge: 4,
-      rightEdge: 13
-    });
+    checkGetEdgeEqual(diamondCards, { leftEdge: 4, rightEdge: 13 });
   });
   it('Get suitable edge', () => {
-    expect(getEdge(heartCards)).toEqual({
-      leftEdge: 6,
-      rightEdge: 7
-    });
+    checkGetEdgeEqual(heartCards, { leftEdge: 6, rightEdge: 7 });
   });
   it('Get edge of empty cards', () => {
-    expect(getEdge(clubCards)).toEqual({
-      leftEdge: 0,
-      rightEdge: 14
-    });
+    checkGetEdgeEqual(clubCards, { leftEdge: 0, rightEdge: 14 });
   });
 });
