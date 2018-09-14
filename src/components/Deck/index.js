@@ -33,10 +33,7 @@ const getCardDeck = (spread) => {
           marginLeft: LEFT_DECK_MRGN - (CARDS_IN_DECK - i)
         }}
       >
-        <Card
-          type=""
-          number=""
-        />
+        <Card />
       </div>
     );
     cards.push(el);
