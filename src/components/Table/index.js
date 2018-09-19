@@ -3,23 +3,20 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Table = ({
-  handCards,
-  deck,
-  playButton,
-  cardSets
+  handCards, deck, playButton, enemy1Cards, enemy2Cards, enemy3Cards, cardSets
 }) => (
   <div className="c-table">
     <div className="c-table__item" />
     <div className="c-table__item">
       <div className="c-table__card-placeholder c-table__card-placeholder--top">
-        top
+        {enemy1Cards}
       </div>
     </div>
     <div className="c-table__item" />
 
     <div className="c-table__item c-table__item--left">
       <div className="c-table__card-placeholder c-table__card-placeholder--left">
-        left
+        {enemy2Cards}
       </div>
     </div>
     <div className="c-table__item">
@@ -28,7 +25,7 @@ const Table = ({
     </div>
     <div className="c-table__item c-table__item--right">
       <div className="c-table__card-placeholder c-table__card-placeholder--right">
-        right
+        {enemy3Cards}
       </div>
     </div>
 
@@ -48,6 +45,9 @@ Table.propTypes = {
   handCards: PropTypes.object.isRequired,
   deck: PropTypes.object.isRequired,
   playButton: PropTypes.object,
+  enemy1Cards: PropTypes.object.isRequired,
+  enemy2Cards: PropTypes.object.isRequired,
+  enemy3Cards: PropTypes.object.isRequired,
   cardSets: PropTypes.object
 };
 

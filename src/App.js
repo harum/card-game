@@ -5,10 +5,13 @@ import React, { Component } from 'react';
 
 import Table from './components/Table';
 import HandCards from './components/HandCards';
+import EnemyHandCards from './components/EnemyHandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
 import cardSets from './dummy/cardSets';
+// import handCardsDummy from './dummy/handCards';
 // import handCardsDummyFull from './dummy/handCards';
+import enemyHandCardsDummy from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
 import shuffleDeck from './helpers/shuffleDeck';
 import fullDeck from './dummy/fullDeck';
@@ -20,6 +23,7 @@ class App extends Component {
     super(props);
     this.state = {
       cards: playableCards(shuffleDeck(fullDeck), cardSets),
+      enemyCards: enemyHandCardsDummy,
       spread: false,
       showCard: false
     };
@@ -39,6 +43,14 @@ class App extends Component {
       onCardClick={index => this.pickCard(index)}
     />
   )
+  getEnemyCards = (a, b, c) => (
+    <EnemyHandCards
+      cards={this.state.enemyCards.slice(a, b)}
+      showCard={this.state.showCard}
+      key={`${c}`}
+    />
+  );
+
 
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
@@ -71,6 +83,7 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.getHandCards());
     // socket.on('cards', (data) => {
     //   this.setState({
     //     cards: playableCards(data, cardSets)
@@ -84,6 +97,9 @@ class App extends Component {
           handCards={this.getHandCards()}
           playButton={this.getPlayButton()}
           cardSets={this.getCardSets()}
+          enemy1Cards={this.getEnemyCards(0, 13, 'enemy1HandCard')}
+          enemy2Cards={this.getEnemyCards(13, 26, 'enemy2HandCard')}
+          enemy3Cards={this.getEnemyCards(26, 39, 'enemy3HandCard')}
         />
       </div>
     );
