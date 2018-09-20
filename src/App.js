@@ -23,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: playableCards(shuffleDeck(fullDeck), cardSets),
+      cards: playableCards(shuffleDeck(fullDeck).slice(0, 13), cardSets),
       spread: false,
       showCard: false
     };
@@ -82,7 +82,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.getHandCards());
+    // console.log(this.getHandCards());
     // console.log(this.getHandCards());
     // socket.on('cards', (data) => {;
     //   this.setState({
