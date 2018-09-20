@@ -25,9 +25,6 @@ const firstTurnPlayer = (a, b, c, d) => {
     return c;
   } return d;
 };
-// const checkingFirstTurnPlayer = (a, b, c, d, expected) => {
-//   expect(tes(a, b, c, d)).toBe(expected);
-// };
 
 describe('Check 1st Turn Player', () => {
   it('return true, check 1st turn player contains 7spade', () => {

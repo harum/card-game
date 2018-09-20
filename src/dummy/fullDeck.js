@@ -11,7 +11,9 @@ import {
   tenSpade,
   jackSpade,
   queenSpade,
-  kingSpade,
+  kingSpade
+} from '../dummy/allSpadeCards';
+import {
   aceHeart,
   twoHeart,
   threeHeart,
@@ -24,7 +26,9 @@ import {
   tenHeart,
   jackHeart,
   queenHeart,
-  kingHeart,
+  kingHeart
+} from '../dummy/allHeartCards';
+import {
   aceClub,
   twoClub,
   threeClub,
@@ -37,7 +41,9 @@ import {
   tenClub,
   jackClub,
   queenClub,
-  kingClub,
+  kingClub
+} from '../dummy/allClubCards';
+import {
   aceDiamond,
   twoDiamond,
   threeDiamond,
@@ -51,7 +57,8 @@ import {
   jackDiamond,
   queenDiamond,
   kingDiamond
-} from '../dummy/allCards';
+} from '../dummy/allDiamondCards';
+
 
 const fullDeck = [
   aceSpade,
