@@ -206,31 +206,31 @@ const eightClub = {
 };
 const nineClub = {
   type: 'club',
-  number: '8',
+  number: '9',
   eligible: false,
   picked: false
 };
 const tenClub = {
   type: 'club',
-  number: '8',
+  number: '10',
   eligible: false,
   picked: false
 };
 const jackClub = {
   type: 'club',
-  number: '8',
+  number: 'J',
   eligible: false,
   picked: false
 };
 const queenClub = {
   type: 'club',
-  number: '8',
+  number: 'Q',
   eligible: false,
   picked: false
 };
 const kingClub = {
   type: 'club',
-  number: '8',
+  number: 'K',
   eligible: false,
   picked: false
 };
