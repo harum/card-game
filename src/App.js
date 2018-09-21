@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-// import io from 'socket.io-client';
+import io from 'socket.io-client';
 
 import React, { Component } from 'react';
 
@@ -14,7 +14,7 @@ import handCardsDummy from './dummy/handCards';
 import enemyHandCardsDummy from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
 
-// const socket = io('http://localhost:8080');
+const socket = io('http://localhost:8080');
 
 class App extends Component {
   constructor(props) {
@@ -102,12 +102,22 @@ class App extends Component {
   }
 
   putCardToArena = () => {
-    console.log('put card');
+    const selectedCard = this.state.cards[this.state.selectedCard];
+    socket.emit('cardAction', {
+      action: 'putCard',
+      type: selectedCard.type,
+      number: selectedCard.number
+    });
     this.hideModal();
   }
 
   foldCard = () => {
-    console.log('fold card');
+    const selectedCard = this.state.cards[this.state.selectedCard];
+    socket.emit('cardAction', {
+      action: 'foldCard',
+      type: selectedCard.type,
+      number: selectedCard.number
+    });
     this.hideModal();
   }
 

@@ -18,6 +18,16 @@ io.on('connection', (socket) => {
 
   socket.emit('cards', cardRandomizer().slice(0, 12));
 
+  socket.on('cardAction', (payload) => {
+    /*
+    * payload example:
+    * { action: 'putCard', type: 'diamond', number: '3' }
+    * or
+    * { action: 'foldCard', type: 'spade', number: '4' }
+    */
+    console.log(payload);
+  });
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
