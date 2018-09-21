@@ -8,6 +8,7 @@ import HandCards from './components/HandCards';
 import EnemyHandCards from './components/EnemyHandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
+import ConfirmationPopup from './components/ConfirmationPopup';
 import cardSets from './dummy/cardSets';
 import handCardsDummy from './dummy/handCards';
 import enemyHandCardsDummy from './dummy/enemyHandCards';
@@ -21,8 +22,11 @@ class App extends Component {
     this.state = {
       cards: playableCards(handCardsDummy, cardSets),
       enemyCards: enemyHandCardsDummy,
+      selectedCard: 0,
+      selectedCardEligible: true,
       spread: false,
-      showCard: false
+      showCard: false,
+      showPopup: false
     };
   }
 
@@ -61,7 +65,27 @@ class App extends Component {
     />
   )
 
+  getConfirmationPopup = () => (
+    <ConfirmationPopup
+      show={this.state.showPopup}
+      handleClose={this.hideModal}
+      eligible={this.state.selectedCardEligible}
+    />
+  )
+
+  hideModal = () => {
+    this.togglePickedCard();
+    this.setState({ showPopup: false });
+  };
+
   pickCard = (index) => {
+    this.togglePickedCard(index);
+    this.setState({ selectedCardEligible: this.state.cards[index].eligible });
+    this.setState({ selectedCard: index });
+    this.setState({ showPopup: true });
+  }
+
+  togglePickedCard = (index = this.state.selectedCard) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
     this.setState({ cards: tempCards });
@@ -97,6 +121,7 @@ class App extends Component {
           enemy1Cards={this.getEnemyCards(0, 13, 'enemy1HandCard')}
           enemy2Cards={this.getEnemyCards(13, 26, 'enemy2HandCard')}
           enemy3Cards={this.getEnemyCards(26, 39, 'enemy3HandCard')}
+          popup={this.getConfirmationPopup()}
         />
       </div>
     );

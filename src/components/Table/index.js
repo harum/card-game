@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Table = ({
-  handCards, deck, playButton, enemy1Cards, enemy2Cards, enemy3Cards, cardSets
+  handCards, deck, playButton, enemy1Cards, enemy2Cards, enemy3Cards, cardSets, popup
 }) => (
   <div className="c-table">
     <div className="c-table__item" />
@@ -34,6 +34,7 @@ const Table = ({
     </div>
     <div className="c-table__item">
       <div className="c-table__card-placeholder c-table__card-placeholder--bottom">
+        {popup}
         {handCards}
       </div>
     </div>
@@ -48,7 +49,8 @@ Table.propTypes = {
   enemy1Cards: PropTypes.object.isRequired,
   enemy2Cards: PropTypes.object.isRequired,
   enemy3Cards: PropTypes.object.isRequired,
-  cardSets: PropTypes.object
+  cardSets: PropTypes.object,
+  popup: PropTypes.object.isRequired
 };
 
 Table.defaultProps = {

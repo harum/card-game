@@ -17,7 +17,7 @@ const HandCards = ({ cards, showCard, onCardClick }) => (
           className="c-hand-cards__item"
           role="presentation"
           key={`${card.type}-${card.number}`}
-          onClick={() => onCardClick(index)}
+          onDoubleClick={() => onCardClick(index)}
         >
           <Card
             type={card.type}
