@@ -44,14 +44,14 @@ class App extends Component {
       onCardClick={index => this.pickCard(index)}
     />
   )
+
   getEnemyCards = (a, b, c) => (
     <EnemyHandCards
       cards={this.state.enemyCards.slice(a, b)}
       showCard={this.state.showCard}
       key={`${c}`}
     />
-  );
-
+  )
 
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
@@ -68,27 +68,47 @@ class App extends Component {
   getConfirmationPopup = () => (
     <ConfirmationPopup
       show={this.state.showPopup}
-      handleClose={this.hideModal}
       eligible={this.state.selectedCardEligible}
+      cancelCard={this.cancelCard}
+      putCard={this.putCardToArena}
+      foldCard={this.foldCard}
     />
   )
 
-  hideModal = () => {
-    this.togglePickedCard();
-    this.setState({ showPopup: false });
-  };
-
   pickCard = (index) => {
-    this.togglePickedCard(index);
-    this.setState({ selectedCardEligible: this.state.cards[index].eligible });
-    this.setState({ selectedCard: index });
-    this.setState({ showPopup: true });
+    if (!this.state.cards[index].picked) {
+      this.togglePickedCard(index);
+      this.setState({ selectedCardEligible: this.state.cards[index].eligible });
+      this.setState({ selectedCard: index });
+      this.setState({ showPopup: true });
+    } else {
+      this.togglePickedCard(index);
+    }
   }
 
   togglePickedCard = (index = this.state.selectedCard) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
     this.setState({ cards: tempCards });
+  }
+
+  hideModal = () => {
+    this.setState({ showPopup: false });
+  }
+
+  cancelCard = () => {
+    this.togglePickedCard();
+    this.hideModal();
+  }
+
+  putCardToArena = () => {
+    console.log('put card');
+    this.hideModal();
+  }
+
+  foldCard = () => {
+    console.log('fold card');
+    this.hideModal();
   }
 
   spreadCards = () => {

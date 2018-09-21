@@ -4,7 +4,9 @@ import './style.scss';
 
 import Button from '../Button';
 
-const ConfirmationPopup = ({ handleClose, show, eligible }) => {
+const ConfirmationPopup = ({
+  cancelCard, show, eligible, putCard, foldCard
+}) => {
   const showHideClassName = show ? 'c-modal c-modal--block' : 'c-modal c-modal--none';
   const modalText = eligible ? 'Put this card in the arena?' : 'Fold this card?';
 
@@ -12,10 +14,10 @@ const ConfirmationPopup = ({ handleClose, show, eligible }) => {
     <div className={showHideClassName}>
       <div className="c-modal__main">
         <h4>{modalText}</h4>
-        <Button text="Cancel" onClick={handleClose} />
+        <Button text="Cancel" onClick={cancelCard} />
         { eligible ?
-          (<Button text="Put" onClick={handleClose} color="blue" />) :
-          (<Button text="Fold" onClick={handleClose} color="red" />)
+          (<Button text="Put" onClick={putCard} color="blue" />) :
+          (<Button text="Fold" onClick={foldCard} color="red" />)
         }
       </div>
     </div>
@@ -24,7 +26,9 @@ const ConfirmationPopup = ({ handleClose, show, eligible }) => {
 
 ConfirmationPopup.propTypes = {
   eligible: PropTypes.bool.isRequired,
-  handleClose: PropTypes.func.isRequired,
+  foldCard: PropTypes.func.isRequired,
+  cancelCard: PropTypes.func.isRequired,
+  putCard: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired
 };
 
