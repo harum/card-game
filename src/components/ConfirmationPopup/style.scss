@@ -1,15 +1,18 @@
+$background-shadow: rgba(0, 0, 0, .2);
+$color-white: #fff;
+
 .c-modal {
-  background: rgba(0, 0, 0, 0.2);
+  background: $background-shadow;
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
-  width:100%;
+  width: 100%;
   z-index: 1000;
 }
 
 .c-modal__main {
-  background: white;
+  background: $color-white;
   border-radius: 4px;
   bottom: 25%;
   font-family: 'Quicksand', sans-serif;

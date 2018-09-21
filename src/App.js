@@ -103,23 +103,21 @@ class App extends Component {
 
   putCardToArena = () => {
     const selectedCard = this.state.cards[this.state.selectedCard];
-    socket.emit('cardAction', {
-      action: 'putCard',
-      type: selectedCard.type,
-      number: selectedCard.number
-    });
+    socket.emit('cardAction', this.createCardActionPayload('putCard', selectedCard));
     this.hideModal();
   }
 
   foldCard = () => {
     const selectedCard = this.state.cards[this.state.selectedCard];
-    socket.emit('cardAction', {
-      action: 'foldCard',
-      type: selectedCard.type,
-      number: selectedCard.number
-    });
+    socket.emit('cardAction', this.createCardActionPayload('foldCard', selectedCard));
     this.hideModal();
   }
+
+  createCardActionPayload = (action, card) => ({
+    action,
+    type: card.type,
+    number: card.number
+  })
 
   spreadCards = () => {
     this.setState({
