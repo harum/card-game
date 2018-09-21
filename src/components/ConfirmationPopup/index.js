@@ -12,7 +12,7 @@ const ConfirmationPopup = ({
 
   return (
     <div className={showHideClassName}>
-      <div className="c-modal__main">
+      <div className="c-modal-main">
         <h4>{modalText}</h4>
         <Button text="Cancel" onClick={cancelCard} />
         { eligible ?
