@@ -90,5 +90,5 @@ export {
   tenHeart,
   jackHeart,
   queenHeart,
-  kingHeart,
+  kingHeart
 };
