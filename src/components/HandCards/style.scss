@@ -13,6 +13,11 @@
       cursor: pointer;
     }
 
+    &--ineligible:hover {
+      box-shadow: none !important;
+      cursor: default !important;
+    }
+
     &:active {
       box-shadow: 0 0 20px 1px $color-black;
     }
@@ -21,5 +26,16 @@
       // make cards stacked (but not fully stacked, still can see the card number)
       margin-left: -1 * $card-base-left-margin * $card-zoom;
     }
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9999;
   }
 }
