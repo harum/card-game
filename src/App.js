@@ -13,6 +13,7 @@ import cardSets from './dummy/cardSets';
 import handCardsDummy from './dummy/handCards';
 import enemyHandCardsDummy from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
+import hasEligibleCard from './helpers/cardSet/hasEligibleCard';
 
 const socket = io('http://localhost:8080');
 
@@ -22,12 +23,19 @@ class App extends Component {
     this.state = {
       cards: playableCards(handCardsDummy, cardSets),
       enemyCards: enemyHandCardsDummy,
+      hasEligibleCard: false,
       selectedCard: 0,
       selectedCardEligible: true,
-      spread: false,
-      showCard: false,
+      spread: true,
+      showCard: true,
       showPopup: false
     };
+  }
+
+  componentWillMount() {
+    this.setState({
+      hasEligibleCard: hasEligibleCard(this.state.cards)
+    });
   }
 
   getDeck = () => (
@@ -69,6 +77,7 @@ class App extends Component {
     <ConfirmationPopup
       show={this.state.showPopup}
       eligible={this.state.selectedCardEligible}
+      hasEligibleCard={this.state.hasEligibleCard}
       cancelCard={this.cancelCard}
       putCard={this.putCardToArena}
       foldCard={this.foldCard}
