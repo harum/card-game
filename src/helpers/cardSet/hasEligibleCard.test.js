@@ -1,32 +1,5 @@
 import hasEligibleCard from './hasEligibleCard';
 
-const hasEligible = [
-  {
-    type: 'heart',
-    number: 'A',
-    eligible: false,
-    picked: false
-  },
-  {
-    type: 'club',
-    number: 'A',
-    eligible: false,
-    picked: false
-  },
-  {
-    type: 'diamond',
-    number: 'A',
-    eligible: false,
-    picked: false
-  },
-  {
-    type: 'spade',
-    number: 'A',
-    eligible: true,
-    picked: false
-  }
-];
-
 const hasNoEligible = [
   {
     type: 'heart',
@@ -53,6 +26,13 @@ const hasNoEligible = [
     picked: false
   }
 ];
+
+const hasEligible = [...hasNoEligible, {
+  type: 'spade',
+  number: 'A',
+  eligible: true,
+  picked: false
+}];
 
 describe('hasEligibleCard Function', () => {
   it('returns true for at least one eligible cards', () => {
