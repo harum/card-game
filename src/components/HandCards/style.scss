@@ -15,13 +15,14 @@ $overlay-color: rgba(0, 0, 0, .6);
       cursor: pointer;
     }
 
-    &--ineligible:hover {
-      box-shadow: none;
-      cursor: default;
-    }
-
     &:active {
       box-shadow: 0 0 20px 1px $color-black;
+    }
+
+    &--no-hover:hover,
+    &--no-hover:active {
+      box-shadow: none;
+      cursor: default;
     }
 
     &:not(:first-child) {

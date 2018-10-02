@@ -6,10 +6,13 @@ import getCardStyle from '../../helpers/cardStyle';
 import getHandCardStyle from '../../helpers/handCardStyle';
 import './style.scss';
 
-const HandCards = ({ cards, showCard, onCardClick }) => {
+const HandCards = ({
+  cards, showCard, hasEligibleCard, onCardClick
+}) => {
   const getHandCardItemClass = eligible => classNames('c-hand-cards__item', {
-    'c-hand-cards__item--ineligible': !eligible
+    'c-hand-cards__item--no-hover': !eligible && hasEligibleCard
   });
+
   const getOverlayClass = eligible => classNames({
     'c-hand-cards__overlay': !eligible
   });
@@ -43,12 +46,14 @@ const HandCards = ({ cards, showCard, onCardClick }) => {
 HandCards.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object),
   showCard: PropTypes.bool,
+  hasEligibleCard: PropTypes.bool,
   onCardClick: PropTypes.func
 };
 
 HandCards.defaultProps = {
   cards: [],
   showCard: false,
+  hasEligibleCard: false,
   onCardClick: () => {}
 };
 

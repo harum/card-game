@@ -49,6 +49,7 @@ class App extends Component {
     <HandCards
       cards={this.state.cards}
       showCard={this.state.showCard}
+      hasEligibleCard={this.state.hasEligibleCard}
       onCardClick={index => this.pickCard(index)}
     />
   )
