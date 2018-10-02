@@ -9,14 +9,14 @@ import './style.scss';
 const EnemyHandCards = ({ cards, showCard }) => (
   <div
     key=""
-    className="c-hand-cards"
+    className="c-enemy-hand-cards"
     style={getHandCardStyle(cards.length, showCard)}
   >
     { cards.map((card, index) =>
       (
         <div
           style={getCardStyle(card, index)}
-          className="c-hand-cards__item"
+          className="c-enemy-hand-cards__item"
           role="presentation"
           key={`enemyCard-${index + 1}`}
         >

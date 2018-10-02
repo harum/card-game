@@ -1,0 +1,34 @@
+$background-shadow: rgba(0, 0, 0, .2);
+$color-white: #fff;
+
+.c-modal {
+  background: $background-shadow;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.c-modal-main {
+  background: $color-white;
+  border-radius: 4px;
+  bottom: 25%;
+  font-family: 'Quicksand', sans-serif;
+  height: auto;
+  left: 50%;
+  padding: 24px 30px;
+  position: fixed;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
+
+.c-modal--block {
+  display: block;
+}
+
+.c-modal--none {
+  display: none;
+}

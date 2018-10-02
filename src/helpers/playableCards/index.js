@@ -1,3 +1,4 @@
+import { partition } from 'lodash';
 import getEdges from '../cardSet/getEdges';
 import isEligible from '../cardSet/isEligible';
 
@@ -14,7 +15,10 @@ const getPlayabeCards = (onHandCards, onArenaCards) => {
     picked: currentCard.picked
   }));
 
-  return newHandCards;
+  // divide card by eligible or not
+  const [eligibleCards, ineligibleCards] = partition(newHandCards, 'eligible');
+
+  return ineligibleCards.concat(eligibleCards);
 };
 
 export default getPlayabeCards;

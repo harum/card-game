@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-// import io from 'socket.io-client';
+import io from 'socket.io-client';
 
 import React, { Component } from 'react';
 
@@ -8,12 +8,14 @@ import HandCards from './components/HandCards';
 import EnemyHandCards from './components/EnemyHandCards';
 import Deck from './components/Deck';
 import CardArena from './components/CardArena';
+import ConfirmationPopup from './components/ConfirmationPopup';
 import cardSets from './dummy/cardSets';
 import handCardsDummy from './dummy/handCards';
 import enemyHandCardsDummy from './dummy/enemyHandCards';
 import playableCards from './helpers/playableCards';
+import hasEligibleCard from './helpers/cardSet/hasEligibleCard';
 
-// const socket = io('http://localhost:8080');
+const socket = io('http://localhost:8080');
 
 class App extends Component {
   constructor(props) {
@@ -21,9 +23,19 @@ class App extends Component {
     this.state = {
       cards: playableCards(handCardsDummy, cardSets),
       enemyCards: enemyHandCardsDummy,
-      spread: false,
-      showCard: false
+      hasEligibleCard: false,
+      selectedCard: 0,
+      selectedCardEligible: true,
+      spread: true,
+      showCard: true,
+      showPopup: false
     };
+  }
+
+  componentWillMount() {
+    this.setState({
+      hasEligibleCard: hasEligibleCard(this.state.cards)
+    });
   }
 
   getDeck = () => (
@@ -37,17 +49,18 @@ class App extends Component {
     <HandCards
       cards={this.state.cards}
       showCard={this.state.showCard}
+      hasEligibleCard={this.state.hasEligibleCard}
       onCardClick={index => this.pickCard(index)}
     />
   )
+
   getEnemyCards = (a, b, c) => (
     <EnemyHandCards
       cards={this.state.enemyCards.slice(a, b)}
       showCard={this.state.showCard}
       key={`${c}`}
     />
-  );
-
+  )
 
   getPlayButton = () => (
     <button onClick={this.spreadCards}>
@@ -61,10 +74,59 @@ class App extends Component {
     />
   )
 
+  getConfirmationPopup = () => (
+    <ConfirmationPopup
+      show={this.state.showPopup}
+      eligible={this.state.selectedCardEligible}
+      hasEligibleCard={this.state.hasEligibleCard}
+      cancelCard={this.cancelCard}
+      putCard={this.putCardToArena}
+      foldCard={this.foldCard}
+    />
+  )
+
   pickCard = (index) => {
+    if (!this.state.cards[index].picked) {
+      this.togglePickedCard(index);
+      this.setState({ selectedCardEligible: this.state.cards[index].eligible });
+      this.setState({ selectedCard: index });
+      this.setState({ showPopup: true });
+    } else {
+      this.togglePickedCard(index);
+    }
+  }
+
+  togglePickedCard = (index = this.state.selectedCard) => {
     const tempCards = this.state.cards;
     tempCards[index].picked = !tempCards[index].picked;
     this.setState({ cards: tempCards });
+  }
+
+  hideModal = () => {
+    this.setState({ showPopup: false });
+  }
+
+  cancelCard = () => {
+    this.togglePickedCard();
+    this.hideModal();
+  }
+
+  putCardToArena = () => {
+    this.createCardActionPayload('putCard');
+  }
+
+  foldCard = () => {
+    this.createCardActionPayload('foldCard');
+  }
+
+  createCardActionPayload = (action) => {
+    const selectedCard = this.state.cards[this.state.selectedCard];
+    socket.emit('cardAction', {
+      action,
+      type: selectedCard.type,
+      number: selectedCard.number
+    });
+    this.hideModal();
   }
 
   spreadCards = () => {
@@ -97,6 +159,7 @@ class App extends Component {
           enemy1Cards={this.getEnemyCards(0, 13, 'enemy1HandCard')}
           enemy2Cards={this.getEnemyCards(13, 26, 'enemy2HandCard')}
           enemy3Cards={this.getEnemyCards(26, 39, 'enemy3HandCard')}
+          popup={this.getConfirmationPopup()}
         />
       </div>
     );
