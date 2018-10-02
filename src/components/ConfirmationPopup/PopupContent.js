@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import ActionContent from './ActionContent';
 
 const PopupContent = ({
   cancelCard, eligible, putCard, foldCard, hasEligibleCard
@@ -9,13 +10,12 @@ const PopupContent = ({
   const content = () => {
     if (hasEligibleCard) {
       if (eligible) {
-        return (
-          <div>
-            <h4>Put this card in the arena?</h4>
-            <Button text="Cancel" onClick={cancelCard} />
-            <Button text="Put" onClick={putCard} color="blue" />
-          </div>
-        );
+        return (<ActionContent
+          action={putCard}
+          text="Put this card in the arena?"
+          buttonText="Put"
+          cancelCard={cancelCard}
+        />);
       }
 
       return (
@@ -26,13 +26,12 @@ const PopupContent = ({
       );
     }
 
-    return (
-      <div>
-        <h4>Fold this card?</h4>
-        <Button text="Cancel" onClick={cancelCard} />
-        <Button text="Fold" onClick={foldCard} color="red" />
-      </div>
-    );
+    return (<ActionContent
+      action={putCard}
+      text="Fold this card?"
+      buttonText="Fold"
+      cancelCard={foldCard}
+    />);
   };
 
   return content();
